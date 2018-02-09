@@ -15,18 +15,20 @@ public class Car implements CarInterface{
 	private CarSituation carSituation;
 	private CarPosition carPosition;
 	private ArrayList <Integer> openSpaces;
-	public  int sensorCount1;
-	public  int sensorCount2;
+	public int sensorCount1;
+	public int sensorCount2;
+	private int xPos;
+	private int yPos;
+
 	
-	public Car () {
+	public Car (int xPos, int yPos) {
 		this.openSpaces   = new ArrayList<>();
 		this.carSituation = new CarSituation(500, false);
 		this.carPosition = new CarPosition(this.carSituation.stPosition, openSpaces);
 		this.sensorCount1 = 0;
 		this.sensorCount2 = 0;
-		
-		
-		
+		this.xPos = xPos;
+		this.xPos = yPos;
 	}
 	
 @Override
@@ -50,9 +52,16 @@ public class Car implements CarInterface{
 		return carSituation;
 	}
 	
-	public int  getPosition() {
-		return this.carPosition.getPosition() ;
-	}
+	public int[] whereIs() {
+	int[] carCoordinates = new int[2];
+	carCoordinates[0] = xPos;
+	carCoordinates[1] = yPos;
 
-	
+	return carCoordinates;
+}
+
+	public void setCarPosition(int xPos, int yPos ) {
+	this.xPos = xPos;
+	this.yPos = yPos;
+	}
 }
