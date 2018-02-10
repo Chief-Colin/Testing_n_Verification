@@ -12,7 +12,6 @@ public class Radar {
     }
 
     public int getSensorValue() {
-
         return sensorValue;
     }
 }

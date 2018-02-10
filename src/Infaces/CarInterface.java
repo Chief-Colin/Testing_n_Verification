@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public interface CarInterface {
 
-//    int moveForward(Car car) ;
+//    int moveForward() ;
 /**
  DESCRIPTION:
  Name -
@@ -27,11 +27,11 @@ public interface CarInterface {
 
  **/
 
-//    int[] whereIs();
-//
-//    String leftLaneDetect();
-//
-//    String changeLane();
+    int[] whereIs();
+
+    String leftLaneDetect(int queryCount);
+
+    String changeLane();
 
 
 

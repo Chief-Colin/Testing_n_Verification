@@ -12,7 +12,6 @@ public class Lidar {
     }
 
     public int getSensorValue() {
-
         return sensorValue;
     }
 }
