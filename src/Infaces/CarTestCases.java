@@ -92,12 +92,17 @@ public class CarTestCases {
     //TC 12
     @Test
     public void carChangeLaneTest() {
+        Car testCar = new Car(10, 10, 10, 10);
+        testCar.setCarPosition(15,0);
 
+        assertEquals("Lane successfully changed", testCar.changeLane());
     }
     //TC 13
     @Test
     public void carCannotChangeLaneTest() {
-
+        Car testCar = new Car(10, 10, 10, 10);
+        testCar.setCarPosition(5,0);
+        assertEquals("Lane could not be changed", testCar.changeLane());
     }
 }
 

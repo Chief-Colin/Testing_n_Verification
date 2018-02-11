@@ -33,7 +33,7 @@ public class Car implements CarInterface {
     }
 
     public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal) {
-        this.xPos = 0;
+        this.xPos = 15;
         this.yPos = 0;
         Radar radar1 = new Radar(frontRadarVal);
         Radar radar2 = new Radar(midRadarVal);
@@ -47,6 +47,10 @@ public class Car implements CarInterface {
 
     public Car() {}
 
+    /*
+    Checks that car position is currently within the range of the street and moves forward if it is.
+    If not an error message is printed.
+     */
     @Override
     public CarPosition moveForward() {
         if (this.carSituation.getPosition() > 0 && this.carSituation.stPosition <= 500) {
@@ -58,6 +62,9 @@ public class Car implements CarInterface {
         return this.carPosition;
     }
 
+    /*
+    Returns an array representing the position of the car.
+     */
     @Override
     public int[] whereIs() {
         int[] carCoordinates = new int[2];
@@ -67,11 +74,30 @@ public class Car implements CarInterface {
         return carCoordinates;
     }
 
+    /*
+    Checks that left lane is available and clear and changes lane if it is.
+     */
     @Override
     public String changeLane() {
-        return null;
+        if (leftLaneDetect(2).equals( "No car detected on the left lane." ) && this.xPos >= 10 && this.yPos <= 45) {
+            moveForward();
+            setCarPosition(xPos -5, this.yPos);
+            return "Lane successfully changed";
+        }
+        else{
+            return "Lane could not be changed";
+        }
+
     }
 
+
+
+    /*
+    Repeatedly validating sensor values and checking sensor values to see if left lane is clear or if a car
+    is detected. 3+ out of range sensor values returns an error message. If either one of the radar sensors or lidar
+    sensor returns a value less than 6, a warning message is returned.
+    This is done as many times as specified in the parameter.
+     */
     @Override
     public String leftLaneDetect(int queryCount) {
         int faultyValuesCounter = 0;
