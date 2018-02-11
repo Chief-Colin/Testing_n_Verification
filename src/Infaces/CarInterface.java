@@ -10,24 +10,23 @@ public interface CarInterface {
 //    int moveForward() ;
 /**
  DESCRIPTION:
- Name -
- Input Argument Types -
- Output Return Types -
- -
- -
- -
- -
- -
+ Name - whereIs
+ Input Argument Types - No input argument types
+ Output Return Types - int Array [x,y]
+ - x = x-coordinate
+ - y = y-coordinate
 
- PRE-CONDITION:
+ PRE-CONDITION: The x and y instance variables of the Car are initialized
 
- POST-CONDITION:
+ POST-CONDITION: Returns the x and y coordinates of the Car in an int Array containing [x,y].
 
- TEST-CASES:
+ TEST-CASES: 5-6
 
  **/
 
     int[] whereIs();
+
+    //--------------------------------------------------------------------------------------------------//
 
     String leftLaneDetect(int queryCount);
 

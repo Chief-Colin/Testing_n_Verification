@@ -48,52 +48,53 @@ public class CarTestCases {
 //        Assert.assertEquals(400, car.getCarPosition());
 //    }
 
+    //TC 5
     @Test
     public void whereIsTest() {
 
     }
-
+    //TC 6
     @Test
     public void WhereIsBadValuesTest() {
 
     }
-
+    //TC 7
     @Test
     public void oneFaultySensorValueTest() {
         Car testCar = new Car(-1, 5, 5, 10);
 
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
     }
-
+    //TC 8
     @Test
     public void twoFaultySensorValuesTest() {
         Car testCar = new Car(-1, -1, 5, 10);
 
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
     }
-
+    //TC 9
     @Test
     public void threeFaultySensorValuesTest() {
         Car testCar = new Car(-1, -1, 5, -1);
 
         assertEquals("Error: Values not reliable.", testCar.leftLaneDetect(2));
     }
-
+    //TC 10
     @Test
     public void noCarDetectedOnLeftLaneTest() {
 
     }
-
+    //TC 11
     @Test
     public void carDetectedOnLeftLaneTest() {
 
     }
-
+    //TC 12
     @Test
     public void carChangeLaneTest() {
 
     }
-
+    //TC 13
     @Test
     public void carCannotChangeLaneTest() {
 
