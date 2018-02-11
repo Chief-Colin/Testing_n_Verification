@@ -73,7 +73,7 @@ public class CarTestCases {
     }
 
     @Test
-    public void unreliableSensorValuesTest() {
+    public void threeFaultySensorValuesTest() {
         Car testCar = new Car(-1, -1, 5, -1);
 
         assertEquals("Error: Values not reliable.", testCar.leftLaneDetect(2));
