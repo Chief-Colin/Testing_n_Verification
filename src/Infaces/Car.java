@@ -85,9 +85,9 @@ public class Car implements CarInterface {
             return "Lane successfully changed";
         }
         else{
+            moveForward();
             return "Lane could not be changed";
         }
-
     }
 
 
