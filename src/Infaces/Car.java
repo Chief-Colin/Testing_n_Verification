@@ -79,7 +79,7 @@ public class Car implements CarInterface {
      */
     @Override
     public String changeLane() {
-        if (leftLaneDetect(2).equals( "No car detected on the left lane." ) && this.xPos >= 10 && this.yPos <= 45) {
+        if (leftLaneDetect(2).equals( "No car detected on the left lane." ) && this.xPos >= 10 && this.yPos <= 95) {
             moveForward();
             setCarPosition(xPos -5, this.yPos);
             return "Lane successfully changed";
