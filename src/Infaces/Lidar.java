@@ -1,17 +1,18 @@
 package Infaces;
 
+import java.util.Random;
+
 public class Lidar {
-    private int sensorValue;
+	int lidarSensor;
+	
+	public Lidar (int sensor) {
+		Random ran = new Random();
+		this.lidarSensor = ran.nextInt(sensor);
+		
+	}
+	
+	public int getLidar() {
+		return this.lidarSensor;
+	}
 
-    public Lidar(int sensorValue) {
-        this.sensorValue = sensorValue;
-    }
-
-    public void setSensorValue(int sensorValue) {
-        this.sensorValue = sensorValue;
-    }
-
-    public int getSensorValue() {
-        return sensorValue;
-    }
 }

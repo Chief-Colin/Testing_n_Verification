@@ -1,127 +1,182 @@
 /**
- *
+ * 
  */
 package Infaces;
 
 import java.util.ArrayList;
+import java.util.Random;
+
+
+
+
+
 
 
 /**
  * @author chiefcorlyns
+ *
  */
 
-public class Car implements CarInterface {
-    private CarSituation carSituation;
-    private CarPosition carPosition;
-    private ArrayList<Integer> openSpaces;
-    public int sensorCount1;
-    public int sensorCount2;
-    private int xPos;
-    private int yPos;
-    private ArrayList<Radar> radars;
-    private Lidar lidar;
-
-
-    public Car(int xPos, int yPos) {
-        this.openSpaces = new ArrayList<>();
-        this.carSituation = new CarSituation(500, false);
-        this.carPosition = new CarPosition(this.carSituation.stPosition, openSpaces);
-        this.sensorCount1 = 0;
-        this.sensorCount2 = 0;
-        this.xPos = xPos;
-        this.xPos = yPos;
+public class Car implements CarInterface{
+	private CarSituation carSituation;
+	private CarPosition carPosition;
+	private ArrayList <Integer> openSpaces;
+	public  int sensorCounter1;
+	public  int sensorCounter2;
+	public  int sensorCounter3;
+	public  int sensorCounter4;
+	public int emptyCounter;
+	
+	final public int moveCar   = 5;
+	public int distanceCovered = 0;
+	public boolean isMovable;
+	
+	public Car () {
+		this.openSpaces   = new ArrayList<>();
+		this.carSituation = new CarSituation(100, false);
+		this.carPosition = new CarPosition(this.carSituation.stPosition, openSpaces);
+		this.sensorCounter1 = 0;
+		this.sensorCounter2 = 0;
+		this.sensorCounter3 = 0;
+		this.sensorCounter4 = 0;
+		
+		
+		
+	}
+	
+@Override
+	public CarPosition moveForward() {
+	if(this.carSituation.getPosition() < 100 && this.carSituation.stPosition <= 100){
+        this.carSituation.stPosition--;
+       // isEmpty();
     }
-
-    public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal) {
-        this.xPos = 0;
-        this.yPos = 0;
-        Radar radar1 = new Radar(frontRadarVal);
-        Radar radar2 = new Radar(midRadarVal);
-        Radar radar3 = new Radar(backRadarVal);
-        radars = new ArrayList<>();
-        radars.add(radar1);
-        radars.add(radar2);
-        radars.add(radar3);
-        lidar = new Lidar(lidarVal);
+    else {
+        System.out.println("Cant go forward");
+        //System.out.println(carSituation.stPosition);
     }
+    return this.carPosition;
+}
 
-    public Car() {}
+@Override
+public int moveForward1(int move) {
+	if(distanceCovered > 95) {
+		
+		System.out.println("Car cannot move");
+	}
+	else{
+		distanceCovered += move; 
+		}
+	
+	if (distanceCovered <= 95 ) {
+		isMovable = true;
+	}
+	return distanceCovered;
+	
+}
 
-    @Override
-    public CarPosition moveForward() {
-        if (this.carSituation.getPosition() > 0 && this.carSituation.stPosition <= 500) {
-            this.carSituation.stPosition--;
-            // isEmpty();
+
+public int query() {
+   int average = 0;
+   int sensor1Sum = 0;
+   int sensor2Sum = 0;
+   int sensor3Sum = 0;
+   int sensor4Sum = 0;
+   for (int i = 0; i < 5; i++) {
+       Lidar lidar  = new Lidar(50);
+       Ridar ridar1 = new Ridar(50);
+       Ridar ridar2 = new Ridar(50);
+       Ridar ridar3 = new Ridar(50);
+     
+       this.sensorCounter1 = 0;
+       this.sensorCounter2 = 0;
+       this.sensorCounter3 = 0;
+       this.sensorCounter4 = 0;
+       
+      System.out.println(lidar);
+       if (lidar.getLidar() > 20) {
+           sensorCounter1++;
+       }
+       
+       if (ridar1.getRidar() > 20) {
+           sensorCounter2++;
+          
+       }
+   
+    	   
+    	   if(ridar2.getRidar() > 20) {
+    		   sensorCounter3++;
+       }
+    	 
+    	   if(ridar3.getRidar() > 20) {
+    		   sensorCounter4++;
+    	   }
+    	    System.out.println("yes "+ lidar.getLidar());
+    	    System.out.println("yes2 "+ ridar1.getRidar());
+    	    System.out.println("yes3 "+ ridar2.getRidar());
+    	    System.out.println("yes4 "+ ridar3.getRidar());
+       sensor1Sum += lidar.getLidar();
+       sensor2Sum += ridar1.getRidar();
+       sensor3Sum += ridar2.getRidar();
+       sensor4Sum += ridar3.getRidar();
+       System.out.println(sensor1Sum);
+       System.out.println("sum2  "+sensor2Sum);
+   }
+    if (sensorCounter1 > 2 && sensorCounter2 < 3 && sensorCounter3 > 2 && sensorCounter4 > 2){
+        average = sensor2Sum / 5;
+       }
+    else if (sensorCounter1 < 3 && sensorCounter2 > 2  && sensorCounter3 > 2 && sensorCounter4 > 2){
+        average = sensor1Sum / 5;
+    }
+    else if (sensorCounter3 < 3 && sensorCounter2 > 2  && sensorCounter1 > 2 && sensorCounter4 > 2){
+        average = sensor3Sum / 5;
+    }
+    else if (sensorCounter4 < 3 && sensorCounter2 > 2  && sensorCounter3 > 2 && sensorCounter1 > 2){
+        average = sensor3Sum / 5;
+    }
+    else if (sensorCounter1 > 2 && sensorCounter2 > 2 && sensorCounter3 > 2 && sensorCounter1 > 2 ){
+        average = 0;
+    }
+    else {
+        average = ((sensor1Sum / 5) + (sensor2Sum / 5) + (sensor3Sum/5) + (sensor4Sum)) / 4;
+    }
+    if (average > 5) {
+        if (this.emptyCounter == 4) {
+            this.emptyCounter = 0;
+            openSpaces.add(this.carSituation.getPosition());
+            System.out.println("free space at " + this.carSituation.getPosition());
         } else {
-            System.out.println("Cant go forward");
+            this.emptyCounter++;
+            }
+        } else {
+            this.emptyCounter = 0;
         }
-        return this.carPosition;
-    }
-
-    @Override
-    public int[] whereIs() {
-        int[] carCoordinates = new int[2];
-        carCoordinates[0] = xPos;
-        carCoordinates[1] = yPos;
-
-        return carCoordinates;
-    }
-
-    @Override
-    public String changeLane() {
-        return null;
-    }
-
-    @Override
-    public String leftLaneDetect(int queryCount) {
-        int faultyValuesCounter = 0;
-        int currentQueryCounter = 1;
-
-        while (currentQueryCounter <= queryCount) {
+        return average;
+}
 
 
-            for (int i = 0; i < radars.size(); i++) {
-                if (radars.get(i).getSensorValue() < 0 || radars.get(i).getSensorValue() > 50) {
-                    faultyValuesCounter++;
-                }
-            }
 
-            if (lidar.getSensorValue() < 0 || lidar.getSensorValue() > 50) {
-                faultyValuesCounter++;
-            }
-
-            if (faultyValuesCounter >= 3) {
-                return "Error: Values not reliable.";
-            }
+	
 
 
-            for (int i = 0; i < radars.size(); i++) {
-                if (radars.get(i).getSensorValue() > 0 && radars.get(i).getSensorValue() < 6) {
-                    return "Warning: Car detected.";
-                }
-            }
+	public CarPosition getCarPosition() {
+		// TODO Auto-generated method stub
+		return this.carPosition;
+	}
 
-            if (lidar.getSensorValue() > 0 && lidar.getSensorValue() < 6) {
-                return "Warning: Car detected.";
-            }
+	public CarSituation getSituation() {
+		// TODO Auto-generated method stub
+		return this.carSituation;
+	}
+	
+	public int  getPosition() {
+		return this.carPosition.getPosition() ;
+	}
 
-            faultyValuesCounter = 0;
-            currentQueryCounter++;
-        }
+	 public static void main (String args[]){
+	       Car car = new Car();
 
-        return "No car detected on the left lane.";
-    }
-
-    public void setCarPosition(int xPos, int yPos) {
-        this.xPos = xPos;
-        this.yPos = yPos;
-    }
-
-    public Lidar getLidar() {
-        return lidar;
-    }
-
-    public ArrayList<Radar> getRadars() {
-        return radars;
-    }
+	       for (int i = 0; i < 20; i++){
+	           car.moveForward();
+	       }
+	    }
 }

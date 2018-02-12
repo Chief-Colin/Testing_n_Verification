@@ -1,77 +1,76 @@
 /**
- *
+ * 
  */
 package Infaces;
-
 import java.util.ArrayList;
 
-public interface CarInterface {
 
-//    int moveForward() ;
 /**
- DESCRIPTION:
- Name - whereIs
- Input Argument Types - No input argument types
- Output Return Types - int Array [x,y]
- - x = x-coordinate
- - y = y-coordinate
-
- PRE-CONDITION: The x and y instance variables of the Car are initialized
-
- POST-CONDITION: Returns the x and y coordinates of the Car in an int Array containing [x,y].
-
- TEST-CASES: 5-6
-
- **/
-
-    int[] whereIs();
-
-    //--------------------------------------------------------------------------------------------------//
-
-    String leftLaneDetect(int queryCount);
-
-    String changeLane();
-
-
-
-    class CarSituation {
-
-        int stPosition;
-        boolean isFree;
-
-        public CarSituation(int stPosition, boolean isFree) {
-
-            this.stPosition = stPosition;
-            this.isFree = isFree;
-
-        }
-
-        public int getPosition() {
+ * @author chiefcorlyns
+ *
+ */
+public interface CarInterface {
+	class CarSituation{
+		
+		int stPosition=0;
+		boolean isFree;
+		
+		public CarSituation (int stPosition, boolean isFree) {
+			
+			this.stPosition = stPosition;
+			this.isFree = isFree;
+			
+		}
+		
+		 public int getPosition(){
             return this.stPosition;
         }
-    }
+	}
 
+	int moveForward1(int move);
 
-    class CarPosition {
-        int streetPosition;
-        ArrayList<Integer> parkingSpaces;
+	CarPosition moveForward();
+	int 	query();
+		
 
-        public CarPosition(int streetPosition, ArrayList parkingSpaces) {
-            this.streetPosition = streetPosition;
-            this.parkingSpaces = parkingSpaces;
-        }
+	}	 
+	class CarPosition{
+		        int stPosition;
+		        ArrayList<Integer>openSpaces;
+		       
+		        public CarPosition(int stPosition, ArrayList openSpaces){
+		            this.stPosition = stPosition;
+		            this.openSpaces = openSpaces;
+		        }
+		        public int getPosition(){
+		            return this.stPosition;
+		        }
+		        public ArrayList<Integer> getOpenSpaces(){
+		            return this.openSpaces;
+		        }
+		    
+		        class CarSituation {
+		            int streetPosition;
+		            boolean isMovable;
 
-        public int getPosition() {
-            return this.streetPosition;
-        }
+		            public CarSituation(int streetPosition, boolean isMovable){
+		                this.streetPosition = streetPosition;
+		                this.isMovable = isMovable;
+		            }
+		            public int getPosition(){
+		                return this.streetPosition;
+		            }
+		            public boolean isMovable(){
+		                return this.isMovable;
+		            }
+		        }
 
-        public ArrayList<Integer> getParkingSpaces() {
-            return this.parkingSpaces;
-        }
-    }
+		
 
-    CarPosition moveForward();
-}
+		
+
+		
+	}
 
 	
 

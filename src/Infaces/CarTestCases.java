@@ -1,103 +1,66 @@
 package Infaces;
-
 import org.junit.Before;
+import org.junit.After;
+import org.junit.Assert;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.Assert.assertEquals;
+import java.util.ArrayList;
+import Infaces.Car;
 
 
 public class CarTestCases {
-    private Car car;
+	 Car car;
+	    @Before
+	    public void setUp(){
+	        car = new Car();
 
-    @Before
-    public void setUp() {
-        car = new Car();
-    }
+	    }
 
 
-//    //TC 1
-//    @Test
-//    public void moveForwardTest() {
-//        car.getSituation().stPosition = 0;
-//        car.moveForward();
-//        //Assert.assertEquals(0, car.getCarPosition());
-//
-//    }
-//
-//    //TC 2
-//    @Test
-//    public void moveForwardTest2() {
-//        car.getSituation().stPosition = 500;
-//        car.moveForward();
-//        Assert.assertEquals(499, car.getCarPosition());
-//    }
-//
-//    //TC 3
-//    @Test
-//    public void moveForwardTest3() {
-//        car.getSituation().stPosition = 400;
-//        car.moveForward();
-//        Assert.assertEquals(399, car.getCarPosition());
-//    }
-//
-//    //TC 4
-//    @Test
-//    public void moveForwardTest4() {
-//        car.getSituation().stPosition = 400;
-//        car.moveForward();
-//        Assert.assertEquals(400, car.getCarPosition());
-//    }
+//TC 1
+@Test
+public void moveForwardTest1(){
+    car.getSituation().stPosition = 190;
+    car.distanceCovered = 10;
+    car.moveForward1(5);
+    Assert.assertEquals(15,car.distanceCovered);
+}
 
-    //TC 5
-    @Test
-    public void whereIsTest() {
+//TC 2
+//@Test
+//public void moveForwardTest2(){
+//   car.getSituation().stPosition = 100;
+//    car.moveForward();
+//    Assert.assertEquals(99,car.getCarPosition());
+//}
 
-    }
-    //TC 6
-    @Test
-    public void WhereIsBadValuesTest() {
+//TC 3
+//@Test
+//public void moveForwardTest3(){
+ //   car.getSituation().stPosition = 90;
+ //   car.moveForward();
+  //  Assert.assertEquals(99,car.getCarPosition());
+//}
 
-    }
-    //TC 7
-    @Test
-    public void oneFaultySensorValueTest() {
-        Car testCar = new Car(-1, 5, 5, 10);
+//TC 4
+//@Test
+//public void moveForwardTest4(){
+//    car.getSituation().stPosition = 90;
+//    car.moveForward();
+//    Assert.assertEquals(90,car.getCarPosition());
+//}
 
-        assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
-    }
-    //TC 8
-    @Test
-    public void twoFaultySensorValuesTest() {
-        Car testCar = new Car(-1, -1, 5, 10);
+// TC 2
+@Test
+public void isQueryTest1(){
+    car.getSituation().stPosition = 100;
+    car.emptyCounter = 3;
+    int actual = car.query();
+   // if (actual > 100){
+       // Assert.assertEquals(4,car.getIsEmptyCounter());
+   // }
+}
 
-        assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
-    }
-    //TC 9
-    @Test
-    public void threeFaultySensorValuesTest() {
-        Car testCar = new Car(-1, -1, 5, -1);
-
-        assertEquals("Error: Values not reliable.", testCar.leftLaneDetect(2));
-    }
-    //TC 10
-    @Test
-    public void noCarDetectedOnLeftLaneTest() {
-
-    }
-    //TC 11
-    @Test
-    public void carDetectedOnLeftLaneTest() {
-
-    }
-    //TC 12
-    @Test
-    public void carChangeLaneTest() {
-
-    }
-    //TC 13
-    @Test
-    public void carCannotChangeLaneTest() {
-
-    }
 }
 
