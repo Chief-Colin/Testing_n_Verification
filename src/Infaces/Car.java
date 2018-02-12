@@ -11,26 +11,13 @@ import java.util.ArrayList;
  */
 
 public class Car implements CarInterface {
-    private CarSituation carSituation;
-    private CarPosition carPosition;
-    private ArrayList<Integer> openSpaces;
-    public int sensorCount1;
-    public int sensorCount2;
     private int xPos;
     private int yPos;
     private ArrayList<Radar> radars;
     private Lidar lidar;
+    final int move = 5;
+    private boolean isMovable = false;
 
-
-    public Car(int xPos, int yPos) {
-        this.openSpaces = new ArrayList<>();
-        this.carSituation = new CarSituation(500, false);
-        this.carPosition = new CarPosition(this.carSituation.stPosition, openSpaces);
-        this.sensorCount1 = 0;
-        this.sensorCount2 = 0;
-        this.xPos = xPos;
-        this.xPos = yPos;
-    }
 
     public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal) {
         this.xPos = 15;
@@ -45,21 +32,28 @@ public class Car implements CarInterface {
         lidar = new Lidar(lidarVal);
     }
 
-    public Car() {}
+    public Car(){}
+
 
     /*
     Checks that car position is currently within the range of the street and moves forward if it is.
     If not an error message is printed.
      */
     @Override
-    public CarPosition moveForward() {
-        if (this.carSituation.getPosition() > 0 && this.carSituation.stPosition <= 500) {
-            this.carSituation.stPosition--;
-            // isEmpty();
-        } else {
-            System.out.println("Cant go forward");
+    public int moveForward() {
+        if( yPos> 95) {
+
+            System.out.println("Car cannot move");
         }
-        return this.carPosition;
+        else{
+            yPos += move;
+        }
+
+        if (yPos <= 95 ) {
+            isMovable = true;
+        }
+        return yPos;
+
     }
 
     /*
