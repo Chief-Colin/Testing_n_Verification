@@ -72,7 +72,7 @@ public class Car implements CarInterface {
      */
     @Override
     public String changeLane() {
-        if (leftLaneDetect().equals( "No car detected on the left lane." ) && this.xPos >= 10 && this.yPos <= 95) {
+        if (leftLaneDetect(2).equals( "No car detected on the left lane." ) && this.xPos >= 10 && this.yPos <= 95) {
             moveForward(xPos, yPos);
             setCarPosition(xPos -5, this.yPos);
             return "Lane successfully changed";
@@ -92,11 +92,11 @@ public class Car implements CarInterface {
     This is done as many times as specified in the parameter.
      */
     @Override
-    public String leftLaneDetect() {
+    public String leftLaneDetect(int queryCount) {
         int faultyValuesCounter = 0;
         int currentQueryCounter = 1;
 
-        while (currentQueryCounter <= 2) {
+        while (currentQueryCounter <= queryCount) {
 
 
             for (int i = 0; i < radars.size(); i++) {
