@@ -60,12 +60,17 @@ public class Car implements CarInterface {
     Returns an array representing the position of the car.
      */
     @Override
-    public int[] whereIs() {
-        int[] carCoordinates = new int[2];
-        carCoordinates[0] = xPos;
-        carCoordinates[1] = yPos;
+    public int[] whereIs(int xPos, int yPos) {
 
-        return carCoordinates;
+        if ((15<=xPos<=100) && (15<=yPos<=100) {
+            int[] carCoordinates = new int[2];
+            carCoordinates[0] = xPos;
+            carCoordinates[1] = yPos;
+
+            return carCoordinates;
+        }else{
+            System.out.println("Car is out of bounds");
+        }
     }
 
     /*
