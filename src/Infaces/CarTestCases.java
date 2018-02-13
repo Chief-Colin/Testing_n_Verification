@@ -168,7 +168,7 @@ public class CarTestCases {
     }
     //TC 19
     @Test
-    public void checkQueriedSensorValues() {
+    public void checkQueriedSensorValuesAreTheSameTest() {
         Car carTest = new Car(10, 5, 5,10);
         carTest.leftLaneDetect(1);
 
