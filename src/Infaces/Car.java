@@ -60,7 +60,7 @@ public class Car implements CarInterface {
     Returns an array representing the position of the car.
      */
     @Override
-    public int[] whereIs(int xPos, int yPos) {
+    public int[] whereIs() {
             int[] carCoordinates = new int[2];
             carCoordinates[0] = xPos;
             carCoordinates[1] = yPos;
