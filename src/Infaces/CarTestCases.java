@@ -4,7 +4,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public class CarTestCases {
@@ -154,6 +157,32 @@ public class CarTestCases {
         Car testCar = new Car(10, 10, 10, 10);
         testCar.setCarPosition(5, 0);
         assertEquals("Lane could not be changed", testCar.changeLane());
+    }
+
+    //TC 18
+    @Test
+    public void queryCheckedTwiceTest() {
+        Car carTest = new Car(-1, 10, 5, 50);
+        carTest.leftLaneDetect(2);
+        assertTrue(carTest.queryCheck);
+    }
+    //TC 19
+    @Test
+    public void checkQueriedSensorValues() {
+        Car carTest = new Car(10, 5, 5,10);
+        carTest.leftLaneDetect(1);
+
+        ArrayList<Radar> firstRadar = carTest.getRadars();
+        Lidar firstLidar = carTest.getLidar();
+
+        carTest.leftLaneDetect(1);
+
+        ArrayList<Radar> secondRadar = carTest.getRadars();
+        Lidar secondLidar = carTest.getLidar();
+
+        assertTrue(firstLidar.equals(secondLidar));
+        assertTrue(firstRadar.equals(secondRadar));
+
     }
 }
 
