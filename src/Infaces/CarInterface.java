@@ -39,7 +39,7 @@ public interface CarInterface {
      * TEST-CASES: 7-12
      **/
 
-    String leftLaneDetect(int queryCount);
+    String leftLaneDetect();
 
     //--------------------------------------------------------------------------------------------------//
 

@@ -104,7 +104,7 @@ public class CarTestCases {
     public void oneFaultySensorValueCarDetectedTest() {
         Car testCar = new Car(-1, 5, 5, 10);
 
-        assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
+        assertEquals("Warning: Car detected.", testCar.leftLaneDetect());
     }
 
     //TC 12
@@ -112,7 +112,7 @@ public class CarTestCases {
     public void twoFaultySensorValuesCarDetectedTest() {
         Car testCar = new Car(-1, -1, 5, 10);
 
-        assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
+        assertEquals("Warning: Car detected.", testCar.leftLaneDetect());
     }
 
     //TC 13
@@ -120,7 +120,7 @@ public class CarTestCases {
     public void threeFaultySensorValuesCarDetectedTest() {
         Car testCar = new Car(-1, -1, 5, -1);
 
-        assertEquals("Error: Values not reliable.", testCar.leftLaneDetect(2));
+        assertEquals("Error: Values not reliable.", testCar.leftLaneDetect());
     }
 
     //TC 14
@@ -128,7 +128,7 @@ public class CarTestCases {
     public void carDetectedInLeftLaneTest() {
         Car testCar = new Car(10, 10, 5, 2);
 
-        assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
+        assertEquals("Warning: Car detected.", testCar.leftLaneDetect());
     }
 
     //TC 15
@@ -136,7 +136,7 @@ public class CarTestCases {
     public void emptyLeftLaneDetectTest() {
         Car testCar = new Car(10, 10, 50, 50);
 
-        assertEquals("No car detected on the left lane.", testCar.leftLaneDetect(2));
+        assertEquals("No car detected on the left lane.", testCar.leftLaneDetect());
     }
 
     //TC 16
