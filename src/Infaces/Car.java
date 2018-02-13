@@ -40,8 +40,8 @@ public class Car implements CarInterface {
     If not an error message is printed.
      */
     @Override
-    public int moveForward() {
-        if( yPos> 95) {
+    public int moveForward(int xPos, int yPos) {
+        if( this.yPos> 95) {
 
             System.out.println("Car cannot move");
         }
@@ -79,12 +79,12 @@ public class Car implements CarInterface {
     @Override
     public String changeLane() {
         if (leftLaneDetect(2).equals( "No car detected on the left lane." ) && this.xPos >= 10 && this.yPos <= 95) {
-            moveForward();
+            moveForward(xPos, yPos);
             setCarPosition(xPos -5, this.yPos);
             return "Lane successfully changed";
         }
         else{
-            moveForward();
+            moveForward(xPos, yPos);
             return "Lane could not be changed";
         }
     }
@@ -106,7 +106,7 @@ public class Car implements CarInterface {
 
 
             for (int i = 0; i < radars.size(); i++) {
-                if (radars.get(i).getSensorValue() < 0 || radars.get(i).getSensorValue() > 50) {
+                if (radars.get(i).getSensorValue()  < 0 || radars.get(i).getSensorValue() > 50) {
                     faultyValuesCounter++;
                 }
             }

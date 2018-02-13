@@ -49,7 +49,7 @@ public interface CarInterface {
     String changeLane();
 
 
-    int moveForward();
+    int moveForward(int x, int y);
 }
 
 	

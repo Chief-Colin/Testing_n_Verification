@@ -1,17 +1,25 @@
 package Infaces;
 
+import java.util.Random;
+
 public class Radar {
-    private int sensorValue;
+	int ridarSensor;	
+	
+	
+	public Radar (int sensor){
 
-    public Radar(int sensorValue) {
-        this.sensorValue = sensorValue;
-    }
+	Random ran = new Random();
+	this.ridarSensor = ran.nextInt(sensor);
+	}
+	
+	public int getRidar() {
+		return ridarSensor;
+	}
 
-    public void setSensorValue(int sensorValue) {
-        this.sensorValue = sensorValue;
-    }
+	public int getSensorValue() {
+		// TODO Auto-generated method stub
+		return ridarSensor;
+	}
 
-    public int getSensorValue() {
-        return sensorValue;
-    }
+	
 }
