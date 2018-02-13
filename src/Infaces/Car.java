@@ -61,16 +61,11 @@ public class Car implements CarInterface {
      */
     @Override
     public int[] whereIs(int xPos, int yPos) {
-
-        if ((15<=xPos<=100) && (15<=yPos<=100) {
             int[] carCoordinates = new int[2];
             carCoordinates[0] = xPos;
             carCoordinates[1] = yPos;
 
             return carCoordinates;
-        }else{
-            System.out.println("Car is out of bounds");
-        }
     }
 
     /*
@@ -138,8 +133,12 @@ public class Car implements CarInterface {
     }
 
     public void setCarPosition(int xPos, int yPos) {
-        this.xPos = xPos;
-        this.yPos = yPos;
+        if (15<=xPos && yPos<=100) {
+            this.xPos = xPos;
+            this.yPos = yPos;
+        } else {
+            System.out.println("Out of bounds.");
+        }
     }
 
     public Lidar getLidar() {
