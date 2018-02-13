@@ -48,52 +48,52 @@ public class CarTestCases {
     //TC 5
     @Test
     public void whereIsTest() {
-        int xPos = 20;
-        int yPos = 55;
-        int[] coordinates = Car.whereIs(xPos, yPos);
 
-        assertEquals([14, 55], Car.whereIs(xPos, yPos));
+        Car.setCarPosition(20, 55);
+        int[] coordinates = Car.whereIs();
+
+        assertEquals([20, 55], Car.whereIs());
     }
 
 
     //TC 6
     @Test
     public void whereIsBadXValueTest() {
-        int xPos = 14;
-        int yPos = 50;
-        int[] coordinates = Car.whereIs(xPos, yPos);
 
-        assertEquals("Car is out of bounds", Car.whereIs(xPos, yPos));
+        Car.setCarPosition(14, 50);
+        int[] coordinates = Car.whereIs();
+
+        assertEquals("Car is out of bounds", Car.whereIs());
 
     }
     //TC 7
     @Test
     public void whereIsBadYValuesTest() {
-        int xPos = 16;
-        int yPos = 101;
-        int[] coordinates = Car.whereIs(xPos, yPos);
 
-        assertEquals("Car is out of bounds", Car.whereIs(xPos, yPos));
+        Car.setCarPosition(16, 101);
+        int[] coordinates = Car.whereIs();
+
+        assertEquals("Car is out of bounds", Car.whereIs());
 
     }
     //TC 8
     @Test
     public void whereIsEdgeValuesTest() {
-        int xPos = 15;
-        int yPos = 100;
-        int[] coordinates = Car.whereIs(xPos, yPos);
 
-        assertEquals([15,100], Car.whereIs(xPos, yPos));
+        Car.setCarPosition(15, 100);
+        int[] coordinates = Car.whereIs();
+
+        assertEquals([15,100], Car.whereIs());
 
     }
     //TC 10
     @Test
     public void whereIsBadValuesTest() {
-        int xPos = 2;
-        int yPos = 2;
-        int[] coordinates = Car.whereIs(xPos, yPos);
 
-        assertEquals("Car is out of bounds", Car.whereIs(xPos, yPos));
+        Car.setCarPosition(2, 2);
+        int[] coordinates = Car.whereIs();
+
+        assertEquals("Car is out of bounds", Car.whereIs());
 
     }
 
