@@ -175,14 +175,14 @@ public class CarTestCases {
         assertEquals("Lane could not be changed", testCar.changeLane());
     }
 
-    //TC 18
+    //TC 20
     @Test
     public void queryCheckedTwiceTest() {
         Car carTest = new Car(-1, 10, 5, 50);
         carTest.leftLaneDetect(2);
         assertTrue(carTest.queryCheck);
     }
-    //TC 19
+    //TC 21
     @Test
     public void checkQueriedSensorValuesAreTheSameTest() {
         Car carTest = new Car(10, 5, 5,10);
