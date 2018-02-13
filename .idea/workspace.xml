@@ -11,7 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="295d3f58-1172-42f7-837c-93373dea8d71" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Car.class" afterPath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Car.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/CarInterface.class" afterPath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/CarInterface.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/CarTestCases.class" afterPath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/CarTestCases.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Lidar.class" afterPath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Lidar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Radar.class" afterPath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Radar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Infaces/Car.java" afterPath="$PROJECT_DIR$/src/Infaces/Car.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Infaces/CarTestCases.java" afterPath="$PROJECT_DIR$/src/Infaces/CarTestCases.java" />
@@ -31,12 +35,12 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Car.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Infaces/Car.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="111" column="13" lean-forward="true" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
+            <state relative-caret-position="283">
+              <caret line="135" column="41" lean-forward="false" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -44,21 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Radar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Infaces/Radar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CarTestCases.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Infaces/CarTestCases.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2592">
-              <caret line="173" column="8" lean-forward="false" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="8" />
+            <state relative-caret-position="265">
+              <caret line="163" column="39" lean-forward="true" selection-start-line="163" selection-start-column="39" selection-end-line="163" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -67,7 +61,7 @@
       <file leaf-file-name="CarInterface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Infaces/CarInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="702">
               <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -107,9 +101,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3" />
-    <option name="width" value="1299" />
-    <option name="height" value="796" />
+    <option name="x" value="196" />
+    <option name="y" value="19" />
+    <option name="width" value="1669" />
+    <option name="height" value="1011" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -126,8 +121,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -155,6 +148,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -162,7 +157,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RunDashboard">
@@ -279,6 +274,12 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -313,12 +314,6 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JUnit.CarTestCases.queryCheckedTwiceTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.CarTestCases.checkQueriedSensorValues" />
@@ -350,77 +345,78 @@
       <workItem from="1518181318561" duration="1878000" />
       <workItem from="1518436307142" duration="86000" />
       <workItem from="1518436465268" duration="3091000" />
+      <workItem from="1518544899824" duration="2792000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CarTestCases - 2018.02.13 at 11h 48m 33s.xml">
+    <history-entry file="CarTestCases - 2018.02.13 at 19h 13m 34s.xml">
       <configuration name="CarTestCases" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CarTestCases_checkQueriedSensorValues - 2018.02.13 at 11h 44m 11s.xml">
-      <configuration name="CarTestCases.checkQueriedSensorValues" configurationId="JUnit" />
+    <history-entry file="CarTestCases - 2018.02.13 at 19h 14m 37s.xml">
+      <configuration name="CarTestCases" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CarTestCases_queryCheckedTwiceTest - 2018.02.13 at 11h 28m 43s.xml">
-      <configuration name="CarTestCases.queryCheckedTwiceTest" configurationId="JUnit" />
+    <history-entry file="CarTestCases - 2018.02.13 at 19h 18m 06s.xml">
+      <configuration name="CarTestCases" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CarTestCases_queryCheckedTwiceTest - 2018.02.13 at 11h 30m 25s.xml">
-      <configuration name="CarTestCases.queryCheckedTwiceTest" configurationId="JUnit" />
+    <history-entry file="CarTestCases - 2018.02.13 at 19h 19m 28s.xml">
+      <configuration name="CarTestCases" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CarTestCases_queryCheckedTwiceTest - 2018.02.13 at 11h 31m 05s.xml">
-      <configuration name="CarTestCases.queryCheckedTwiceTest" configurationId="JUnit" />
+    <history-entry file="CarTestCases - 2018.02.13 at 19h 19m 39s.xml">
+      <configuration name="CarTestCases" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CarTestCases_queryCheckedTwiceTest - 2018.02.13 at 11h 33m 11s.xml">
-      <configuration name="CarTestCases.queryCheckedTwiceTest" configurationId="JUnit" />
+    <history-entry file="CarTestCases - 2018.02.13 at 19h 19m 52s.xml">
+      <configuration name="CarTestCases" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CarTestCases_queryCheckedTwiceTest - 2018.02.13 at 11h 34m 16s.xml">
-      <configuration name="CarTestCases.queryCheckedTwiceTest" configurationId="JUnit" />
+    <history-entry file="CarTestCases - 2018.02.13 at 19h 27m 55s.xml">
+      <configuration name="CarTestCases" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CarTestCases_queryCheckedTwiceTest - 2018.02.13 at 11h 34m 53s.xml">
-      <configuration name="CarTestCases.queryCheckedTwiceTest" configurationId="JUnit" />
+    <history-entry file="CarTestCases - 2018.02.13 at 19h 28m 17s.xml">
+      <configuration name="CarTestCases" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CarTestCases_queryCheckedTwiceTest - 2018.02.13 at 11h 39m 33s.xml">
-      <configuration name="CarTestCases.queryCheckedTwiceTest" configurationId="JUnit" />
+    <history-entry file="CarTestCases - 2018.02.13 at 19h 28m 44s.xml">
+      <configuration name="CarTestCases" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CarTestCases_queryCheckedTwiceTest - 2018.02.13 at 11h 44m 12s.xml">
-      <configuration name="CarTestCases.queryCheckedTwiceTest" configurationId="JUnit" />
+    <history-entry file="CarTestCases - 2018.02.13 at 19h 35m 46s.xml">
+      <configuration name="CarTestCases" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6092000" />
+    <option name="totallyTimeSpent" value="10242000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="796" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1890625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33727175" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3398058" sideWeight="0.49806523" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18905473" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3398058" sideWeight="0.49806523" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -469,7 +465,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Infaces/CarTestCases.java</url>
-          <line>165</line>
+          <line>173</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -819,7 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,7 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,20 +857,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Infaces/Car.java">
+    <entry file="file://$PROJECT_DIR$/src/Infaces/CarInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="111" column="13" lean-forward="true" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
+        <state relative-caret-position="702">
+          <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Infaces/CarInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/Infaces/Car.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+        <state relative-caret-position="283">
+          <caret line="135" column="41" lean-forward="false" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -885,8 +879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Infaces/CarTestCases.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2592">
-          <caret line="173" column="8" lean-forward="false" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="8" />
+        <state relative-caret-position="265">
+          <caret line="163" column="39" lean-forward="true" selection-start-line="163" selection-start-column="39" selection-end-line="163" selection-end-column="39" />
           <folding />
         </state>
       </provider>

@@ -49,37 +49,45 @@ public class CarTestCases {
     //TC 5
     @Test
     public void whereIsTest() {
-        int xPos = 5;
+        int xPos = 15;
         int yPos = 100;
         car.setCarPosition(xPos, yPos);
         int[] whereIsCar = car.whereIs();
 
-        assertEquals(car.xPos, whereIsCar[0]);
+        assertEquals(whereIsCar[0], 15);
+        assertEquals(whereIsCar[1], 100);
     }
 
 
     // TC 6
     @Test
-    public void whereIsBadXValueTest() {
-        car.setCarPosition(0, 100);
+    public void whereIsBadValuesTest() {
+
+        //first set correct values, then bad ones
+        //->test that good values stay x and y.
+        car.setCarPosition(20, 30);
+
+        car.setCarPosition(6, 5);
         int[] carPos = car.whereIs();
-        car.setCarPosition(100, 5);
 
+        assertEquals(carPos[0], 20);
+        assertEquals(carPos[1], 30);
 
-        assertEquals(carPos[0], car.whereIs()[0]);
-        assertEquals(carPos[1], car.whereIs()[1]);
     }
 
     //    //TC 7
     @Test
-    public void whereIsBadYValueTest() {
+    public void whereIsBadXYValueTest() {
+        //tries to set one bad x value, then one bad y value
+        //-> test should not let set the bad values.
         car.setCarPosition(0, 100);
+        car.setCarPosition(100, 0);
         int[] carPos = car.whereIs();
-        car.setCarPosition(0, 200);
 
 
-        assertEquals(carPos[0], car.whereIs()[0]);
-        assertEquals(carPos[1], car.whereIs()[1]);
+
+        assertEquals(carPos[0], 0);
+        assertEquals(carPos[1], 0);
     }
 //    //TC 8
 //    @Test

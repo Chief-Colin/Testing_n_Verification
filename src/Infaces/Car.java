@@ -133,7 +133,7 @@ public class Car implements CarInterface {
     }
 
     public void setCarPosition(int xPos, int yPos) {
-        if (xPos < 16 && yPos < 101) {
+        if (((14<xPos) && (xPos<101)) && ((14<yPos)&&(yPos<101))) {
             this.xPos = xPos;
             this.yPos = yPos;
         } else {
