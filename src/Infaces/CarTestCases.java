@@ -1,11 +1,10 @@
 package Infaces;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-
-import org.junit.Assert;
 
 
 public class CarTestCases {
@@ -17,85 +16,88 @@ public class CarTestCases {
     }
 
 
-//TC 
+    //TC 1
     @Test
-   public void moveForwardTest() {        
-           car.moveForward(0,95 );
-           Assert.assertEquals(100, car.moveForward(0, 95));
- }
-
-   //TC 2
- @Test
- public void moveForwardTest2() {
-     car.moveForward(95,0 );
-     Assert.assertEquals(5, car.moveForward(95, 0));
- }
-
-//    //TC 3
-    @Test
-    public void moveForwardTest3() {
-        car.moveForward(0,100 );
-        Assert.assertEquals("car cannot move", car.moveForward(0, 100));
+    public void moveForwardTest() {
+        car.moveForward(0, 95);
+        Assert.assertEquals(100, car.moveForward(0, 95));
     }
 
-//    //TC 4
-  @Test
-  public void moveForwardTest4() {
-      car.moveForward(5,50 );
-      Assert.assertEquals(55, car.moveForward(5, 55));
-   }
+    //TC 2
+    @Test
+    public void moveForwardTest2() {
+        car.moveForward(95, 0);
+        Assert.assertEquals(5, car.moveForward(95, 0));
+    }
+
+    //    //TC 3
+    @Test
+    public void moveForwardTest3() {
+        car.moveForward(0, 100);
+        Assert.assertEquals(1, car.moveForward(0, 100));
+    }
+
+    //    //TC 4
+    @Test
+    public void moveForwardTest4() {
+        Assert.assertEquals(55, car.moveForward(5, 50));
+    }
 
     //TC 5
     @Test
     public void whereIsTest() {
-        int xPos = 20;
-        int yPos = 55;
-        int[] coordinates = Car.whereIs(xPos, yPos);
+        int xPos = 5;
+        int yPos = 100;
+        car.setCarPosition(xPos, yPos);
+        int[] whereIsCar = car.whereIs();
 
-        assertEquals([14, 55], Car.whereIs(xPos, yPos));
+        assertEquals(car.xPos, whereIsCar[0]);
     }
 
 
-    //TC 6
+    // TC 6
     @Test
     public void whereIsBadXValueTest() {
-        int xPos = 14;
-        int yPos = 50;
-        int[] coordinates = Car.whereIs(xPos, yPos);
+        car.setCarPosition(0, 100);
+        int[] carPos = car.whereIs();
+        car.setCarPosition(100, 5);
 
-        assertEquals("Car is out of bounds", Car.whereIs(xPos, yPos));
 
+        assertEquals(carPos[0], car.whereIs()[0]);
+        assertEquals(carPos[1], car.whereIs()[1]);
     }
-    //TC 7
+
+    //    //TC 7
     @Test
-    public void whereIsBadYValuesTest() {
-        int xPos = 16;
-        int yPos = 101;
-        int[] coordinates = Car.whereIs(xPos, yPos);
+    public void whereIsBadYValueTest() {
+        car.setCarPosition(0, 100);
+        int[] carPos = car.whereIs();
+        car.setCarPosition(0, 200);
 
-        assertEquals("Car is out of bounds", Car.whereIs(xPos, yPos));
 
+        assertEquals(carPos[0], car.whereIs()[0]);
+        assertEquals(carPos[1], car.whereIs()[1]);
     }
-    //TC 8
-    @Test
-    public void whereIsEdgeValuesTest() {
-        int xPos = 15;
-        int yPos = 100;
-        int[] coordinates = Car.whereIs(xPos, yPos);
-
-        assertEquals([15,100], Car.whereIs(xPos, yPos));
-
-    }
-    //TC 10
-    @Test
-    public void whereIsBadValuesTest() {
-        int xPos = 2;
-        int yPos = 2;
-        int[] coordinates = Car.whereIs(xPos, yPos);
-
-        assertEquals("Car is out of bounds", Car.whereIs(xPos, yPos));
-
-    }
+//    //TC 8
+//    @Test
+//    public void whereIsEdgeValuesTest() {
+//        int xPos = 15;
+//        int yPos = 100;
+//        int[] coordinates = car.whereIs();
+//
+//        assertEquals(new int[] {xPos, yPos}, car.whereIs());
+//
+//    }
+//    //TC 10
+//    @Test
+//    public void whereIsBadValuesTest() {
+//        int xPos = 2;
+//        int yPos = 2;
+//        int[] coordinates = car.whereIs();
+//
+//        assertEquals("Car is out of bounds", car.whereIs();
+//
+//    }
 
     //TC 11
     @Test
@@ -104,6 +106,7 @@ public class CarTestCases {
 
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
     }
+
     //TC 12
     @Test
     public void twoFaultySensorValuesCarDetectedTest() {
@@ -111,6 +114,7 @@ public class CarTestCases {
 
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
     }
+
     //TC 13
     @Test
     public void threeFaultySensorValuesCarDetectedTest() {
@@ -118,6 +122,7 @@ public class CarTestCases {
 
         assertEquals("Error: Values not reliable.", testCar.leftLaneDetect(2));
     }
+
     //TC 14
     @Test
     public void carDetectedInLeftLaneTest() {
@@ -125,6 +130,7 @@ public class CarTestCases {
 
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
     }
+
     //TC 15
     @Test
     public void emptyLeftLaneDetectTest() {
@@ -137,15 +143,16 @@ public class CarTestCases {
     @Test
     public void carChangeLaneTestRightmostLane() {
         Car testCar = new Car(10, 10, 10, 10);
-        testCar.setCarPosition(15,0);
+        testCar.setCarPosition(15, 0);
 
         assertEquals("Lane successfully changed", testCar.changeLane());
     }
+
     //TC 17
     @Test
     public void carCannotChangeLaneTestLeftmostLane() {
         Car testCar = new Car(10, 10, 10, 10);
-        testCar.setCarPosition(5,0);
+        testCar.setCarPosition(5, 0);
         assertEquals("Lane could not be changed", testCar.changeLane());
     }
 }

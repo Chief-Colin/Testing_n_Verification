@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 
 public class Car implements CarInterface {
-    private int xPos;
-    private int yPos;
+    int xPos;
+    int yPos;
     private ArrayList<Radar> radars;
     private Lidar lidar;
     final int move = 5;
@@ -41,9 +41,8 @@ public class Car implements CarInterface {
      */
     @Override
     public int moveForward(int xPos, int yPos) {
-        if( this.yPos> 95) {
-
-            System.out.println("Car cannot move");
+        if(yPos> 95) {
+            return 1;
         }
         else{
             yPos += move;
@@ -133,7 +132,7 @@ public class Car implements CarInterface {
     }
 
     public void setCarPosition(int xPos, int yPos) {
-        if (15<=xPos && yPos<=100) {
+        if (xPos < 16 && yPos < 101) {
             this.xPos = xPos;
             this.yPos = yPos;
         } else {

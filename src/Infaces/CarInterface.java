@@ -3,8 +3,6 @@
  */
 package Infaces;
 
-import java.util.ArrayList;
-
 public interface CarInterface {
 
 //    int moveForward() ;
@@ -24,7 +22,7 @@ public interface CarInterface {
      * TEST-CASES: 5-6
      **/
 
-    int[] whereIs(int xPos, int yPos);
+    int[] whereIs();
 
     //--------------------------------------------------------------------------------------------------//
 
