@@ -110,7 +110,7 @@ public class CarTestCases {
 //
 //    }
 
-    //TC 11
+    //TC 11 - Car  detection with one faulty sensor
     @Test
     public void oneFaultySensorValueCarDetectedTest() {
         Car testCar = new Car(-1, 5, 5, 10);
@@ -118,7 +118,7 @@ public class CarTestCases {
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
     }
 
-    //TC 12
+    //TC 12 - Car detection with two faulty sensors
     @Test
     public void twoFaultySensorValuesCarDetectedTest() {
         Car testCar = new Car(-1, -1, 5, 10);
@@ -126,7 +126,7 @@ public class CarTestCases {
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
     }
 
-    //TC 13
+    //TC 13 - Car detection with three faulty sensors, should return error message indicating unreliable sensor values
     @Test
     public void threeFaultySensorValuesCarDetectedTest() {
         Car testCar = new Car(-1, -1, 5, -1);
@@ -134,7 +134,7 @@ public class CarTestCases {
         assertEquals("Error: Values not reliable.", testCar.leftLaneDetect(2));
     }
 
-    //TC 14
+    //TC 14 - Car detection with no faulty sensor values
     @Test
     public void carDetectedInLeftLaneTest() {
         Car testCar = new Car(10, 10, 5, 2);
@@ -142,7 +142,7 @@ public class CarTestCases {
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
     }
 
-    //TC 15
+    //TC 15 - Empty lane detection with no faulty sensor values
     @Test
     public void emptyLeftLaneDetectTest() {
         Car testCar = new Car(10, 10, 50, 50);
@@ -152,7 +152,7 @@ public class CarTestCases {
 
     //TC 16
     @Test
-    public void carChangeLaneTestRightmostLane() {
+    public void carChangeLaneTestRightmostLaneBeginningOfStreet() {
         Car testCar = new Car(10, 10, 10, 10);
         testCar.setCarPosition(15, 0);
 
@@ -161,22 +161,39 @@ public class CarTestCases {
 
     //TC 17
     @Test
-    public void carCannotChangeLaneTestLeftmostLane() {
+    public void carChangeLaneTestMiddleLaneMidWayOfStreet()  {
+        Car testCar = new Car(10, 10, 10, 10);
+        testCar.setCarPosition(10, 50);
+        assertEquals("Lane successfully changed", testCar.changeLane());
+    }
+
+    //TC 18
+    @Test
+    public void carCannotChangeLaneTestLeftmostLaneBeginningOfStreet() {
         Car testCar = new Car(10, 10, 10, 10);
         testCar.setCarPosition(5, 0);
         assertEquals("Lane could not be changed", testCar.changeLane());
     }
 
-    //TC 18
+    //TC 19
     @Test
-    public void queryCheckedTwiceTest() {
+    public void carCannotChangeLaneTestRightmostLaneEndOfStreet() {
+        Car testCar = new Car(10, 10, 10, 10);
+        testCar.setCarPosition(15, 96);
+        assertEquals("Lane could not be changed", testCar.changeLane());
+    }
+
+    //TC 20 - Checks whether or not the sensor values inside leftLaneDetect() are queried twice to check for
+    //        faulty sensor values.
+    @Test
+        public void queryCheckedTwiceTest() {
         Car carTest = new Car(-1, 10, 5, 50);
         carTest.leftLaneDetect(2);
         assertTrue(carTest.queryCheck);
     }
-    //TC 19
+    //TC 21 - Checks if the queried sensor values are the twice in both queries
     @Test
-    public void checkQueriedSensorValues() {
+    public void checkQueriedSensorValuesAreTheSameTest() {
         Car carTest = new Car(10, 5, 5,10);
         carTest.leftLaneDetect(1);
 
@@ -193,4 +210,3 @@ public class CarTestCases {
 
     }
 }
-

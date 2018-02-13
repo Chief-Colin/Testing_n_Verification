@@ -10,14 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="295d3f58-1172-42f7-837c-93373dea8d71" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Car.class" afterPath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Car.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/CarInterface.class" afterPath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/CarInterface.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/CarTestCases.class" afterPath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/CarTestCases.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Lidar.class" afterPath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Lidar.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Radar.class" afterPath="$PROJECT_DIR$/out/production/Testing_n_Verification/Infaces/Radar.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+=======
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Infaces/Car.java" afterPath="$PROJECT_DIR$/src/Infaces/Car.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Infaces/CarTestCases.java" afterPath="$PROJECT_DIR$/src/Infaces/CarTestCases.java" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -39,8 +41,13 @@
       <file leaf-file-name="Car.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Infaces/Car.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="283">
               <caret line="135" column="41" lean-forward="false" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
+=======
+            <state relative-caret-position="16">
+              <caret line="111" column="13" lean-forward="false" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -51,8 +58,13 @@
       <file leaf-file-name="CarTestCases.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Infaces/CarTestCases.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="265">
               <caret line="163" column="39" lean-forward="true" selection-start-line="163" selection-start-column="39" selection-end-line="163" selection-end-column="39" />
+=======
+            <state relative-caret-position="620">
+              <caret line="203" column="1" lean-forward="false" selection-start-line="203" selection-start-column="1" selection-end-line="203" selection-end-column="1" />
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
               <folding />
             </state>
           </provider>
@@ -61,7 +73,11 @@
       <file leaf-file-name="CarInterface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Infaces/CarInterface.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="702">
+=======
+            <state relative-caret-position="624">
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
               <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -85,8 +101,8 @@
       <list>
         <option value="$PROJECT_DIR$/bin/Infaces/Car.class" />
         <option value="$PROJECT_DIR$/src/Infaces/CarInterface.java" />
-        <option value="$PROJECT_DIR$/src/Infaces/CarTestCases.java" />
         <option value="$PROJECT_DIR$/src/Infaces/Car.java" />
+        <option value="$PROJECT_DIR$/src/Infaces/CarTestCases.java" />
       </list>
     </option>
   </component>
@@ -101,10 +117,16 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
     <option name="x" value="196" />
     <option name="y" value="19" />
     <option name="width" value="1669" />
     <option name="height" value="1011" />
+=======
+    <option name="x" value="-19" />
+    <option name="width" value="1299" />
+    <option name="height" value="796" />
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -121,7 +143,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,8 +175,12 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+=======
+      <pane id="Scope" />
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -388,14 +419,25 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33727175" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18828125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3398058" sideWeight="0.49806523" order="7" side_tool="false" content_ui="tabs" />
@@ -414,6 +456,15 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+<<<<<<< HEAD
+=======
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -458,14 +509,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="leftLaneDetect() only 2 queries" />
     <MESSAGE value="undo" />
-    <option name="LAST_COMMIT_MESSAGE" value="undo" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Infaces/CarTestCases.java</url>
+<<<<<<< HEAD
           <line>173</line>
+=======
+          <line>182</line>
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -859,7 +915,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Infaces/CarInterface.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="702">
+=======
+        <state relative-caret-position="624">
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
           <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -869,8 +929,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Infaces/Car.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="283">
           <caret line="135" column="41" lean-forward="false" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
+=======
+        <state relative-caret-position="16">
+          <caret line="111" column="13" lean-forward="false" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -879,8 +944,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Infaces/CarTestCases.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="265">
           <caret line="163" column="39" lean-forward="true" selection-start-line="163" selection-start-column="39" selection-end-line="163" selection-end-column="39" />
+=======
+        <state relative-caret-position="620">
+          <caret line="203" column="1" lean-forward="false" selection-start-line="203" selection-start-column="1" selection-end-line="203" selection-end-column="1" />
+>>>>>>> af532df617de4ea4f13f819f6220fdfe43ba1c96
           <folding />
         </state>
       </provider>
