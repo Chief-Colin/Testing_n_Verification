@@ -141,7 +141,7 @@ public class CarTestCases {
 
     //TC 16
     @Test
-    public void carChangeLaneTestRightmostLane() {
+    public void carChangeLaneTestRightmostLaneBeginningOfStreet() {
         Car testCar = new Car(10, 10, 10, 10);
         testCar.setCarPosition(15, 0);
 
@@ -150,9 +150,25 @@ public class CarTestCases {
 
     //TC 17
     @Test
-    public void carCannotChangeLaneTestLeftmostLane() {
+    public void carChangeLaneTestMiddleLaneMidWayOfStreet()  {
+        Car testCar = new Car(10, 10, 10, 10);
+        testCar.setCarPosition(10, 50);
+        assertEquals("Lane successfully changed", testCar.changeLane());
+    }
+
+    //TC 18
+    @Test
+    public void carCannotChangeLaneTestLeftmostLaneBeginningOfStreet() {
         Car testCar = new Car(10, 10, 10, 10);
         testCar.setCarPosition(5, 0);
+        assertEquals("Lane could not be changed", testCar.changeLane());
+    }
+
+    //TC 19
+    @Test
+    public void carCannotChangeLaneTestRightmostLaneEndOfStreet() {
+        Car testCar = new Car(10, 10, 10, 10);
+        testCar.setCarPosition(15, 96);
         assertEquals("Lane could not be changed", testCar.changeLane());
     }
 }
