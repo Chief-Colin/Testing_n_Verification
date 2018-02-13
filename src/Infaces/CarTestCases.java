@@ -50,9 +50,9 @@ public class CarTestCases {
     public void whereIsTest() {
 
         Car.setCarPosition(20, 55);
-        int[] coordinates = Car.whereIs();
+        int[] coordinates = car.whereIs();
 
-        assertEquals([20, 55], Car.whereIs());
+        assertEquals([20, 55], car.whereIs());
     }
 
 
@@ -61,9 +61,9 @@ public class CarTestCases {
     public void whereIsBadXValueTest() {
 
         Car.setCarPosition(14, 50);
-        int[] coordinates = Car.whereIs();
+        int[] coordinates = car.whereIs();
 
-        assertEquals("Car is out of bounds", Car.whereIs());
+        assertEquals("Out of bounds.", car.whereIs());
 
     }
     //TC 7
@@ -71,9 +71,9 @@ public class CarTestCases {
     public void whereIsBadYValuesTest() {
 
         Car.setCarPosition(16, 101);
-        int[] coordinates = Car.whereIs();
+        int[] coordinates = car.whereIs();
 
-        assertEquals("Car is out of bounds", Car.whereIs());
+        assertEquals("Out of bounds.", car.whereIs());
 
     }
     //TC 8
@@ -81,9 +81,9 @@ public class CarTestCases {
     public void whereIsEdgeValuesTest() {
 
         Car.setCarPosition(15, 100);
-        int[] coordinates = Car.whereIs();
+        int[] coordinates = car.whereIs();
 
-        assertEquals([15,100], Car.whereIs());
+        assertEquals([15,100], car.whereIs());
 
     }
     //TC 10
@@ -91,9 +91,9 @@ public class CarTestCases {
     public void whereIsBadValuesTest() {
 
         Car.setCarPosition(2, 2);
-        int[] coordinates = Car.whereIs();
+        int[] coordinates = car.whereIs();
 
-        assertEquals("Car is out of bounds", Car.whereIs());
+        assertEquals("Out of bounds.", car.whereIs());
 
     }
 

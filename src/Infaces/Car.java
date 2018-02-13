@@ -61,20 +61,13 @@ public class Car implements CarInterface {
      */
     @Override
     public int[] whereIs() {
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 547e9571666635011e88f29a19c44acdd1b4e8be
             int[] carCoordinates = new int[2];
             carCoordinates[0] = xPos;
             carCoordinates[1] = yPos;
 
             return carCoordinates;
-<<<<<<< HEAD
 
-=======
->>>>>>> 547e9571666635011e88f29a19c44acdd1b4e8be
     }
 
     /*
@@ -142,17 +135,13 @@ public class Car implements CarInterface {
     }
 
     public void setCarPosition(int xPos, int yPos) {
-<<<<<<< HEAD
-        if ((15<=xPos<=100) && (15<=yPos<=100) {
-            this.xPos = xPos;
-            this.yPos = yPos;
-=======
+
         if (15<=xPos && yPos<=100) {
             this.xPos = xPos;
             this.yPos = yPos;
         } else {
             System.out.println("Out of bounds.");
->>>>>>> 547e9571666635011e88f29a19c44acdd1b4e8be
+
         }
     }
 
