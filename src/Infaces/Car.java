@@ -17,6 +17,7 @@ public class Car implements CarInterface {
     private Lidar lidar;
     final int move = 5;
     private boolean isMovable = false;
+    boolean queryCheck = false;
 
 
     public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal) {
@@ -32,7 +33,8 @@ public class Car implements CarInterface {
         lidar = new Lidar(lidarVal);
     }
 
-    public Car(){}
+    public Car() {
+    }
 
 
     /*
@@ -41,14 +43,13 @@ public class Car implements CarInterface {
      */
     @Override
     public int moveForward(int xPos, int yPos) {
-        if(yPos> 95) {
+        if (yPos > 95) {
             return 1;
-        }
-        else{
+        } else {
             yPos += move;
         }
 
-        if (yPos <= 95 ) {
+        if (yPos <= 95) {
             isMovable = true;
         }
         return yPos;
@@ -60,11 +61,11 @@ public class Car implements CarInterface {
      */
     @Override
     public int[] whereIs() {
-            int[] carCoordinates = new int[2];
-            carCoordinates[0] = xPos;
-            carCoordinates[1] = yPos;
+        int[] carCoordinates = new int[2];
+        carCoordinates[0] = xPos;
+        carCoordinates[1] = yPos;
 
-            return carCoordinates;
+        return carCoordinates;
     }
 
     /*
@@ -72,17 +73,16 @@ public class Car implements CarInterface {
      */
     @Override
     public String changeLane() {
-        if (leftLaneDetect(2).equals( "No car detected on the left lane." ) && this.xPos >= 10 && this.yPos <= 95) {
+        if (leftLaneDetect(2).equals("No car detected on the left lane.") && this.xPos >= 10 && this.yPos <= 95) {
+            queryCheck = false;
             moveForward(xPos, yPos);
-            setCarPosition(xPos -5, this.yPos);
+            setCarPosition(xPos - 5, this.yPos);
             return "Lane successfully changed";
-        }
-        else{
+        } else {
             moveForward(xPos, yPos);
             return "Lane could not be changed";
         }
     }
-
 
 
     /*
@@ -97,10 +97,12 @@ public class Car implements CarInterface {
         int currentQueryCounter = 1;
 
         while (currentQueryCounter <= queryCount) {
-
+            if (currentQueryCounter == 2) {
+                queryCheck = true;
+            }
 
             for (int i = 0; i < radars.size(); i++) {
-                if (radars.get(i).getSensorValue()  < 0 || radars.get(i).getSensorValue() > 50) {
+                if (radars.get(i).getSensorValue() < 0 || radars.get(i).getSensorValue() > 50) {
                     faultyValuesCounter++;
                 }
             }
@@ -112,6 +114,9 @@ public class Car implements CarInterface {
             if (faultyValuesCounter >= 3) {
                 return "Error: Values not reliable.";
             }
+            faultyValuesCounter = 0;
+            currentQueryCounter++;
+        }
 
 
             for (int i = 0; i < radars.size(); i++) {
@@ -123,10 +128,6 @@ public class Car implements CarInterface {
             if (lidar.getSensorValue() > 0 && lidar.getSensorValue() < 6) {
                 return "Warning: Car detected.";
             }
-
-            faultyValuesCounter = 0;
-            currentQueryCounter++;
-        }
 
         return "No car detected on the left lane.";
     }
