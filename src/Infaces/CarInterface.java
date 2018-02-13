@@ -5,7 +5,7 @@ package Infaces;
 
 public interface CarInterface {
 
-//    int moveForward() ;
+ 
 
     /**
      * DESCRIPTION:
@@ -46,8 +46,22 @@ public interface CarInterface {
 
     String changeLane();
 
-
-    int moveForward(int x, int y);
+    //---------------------------------------------------------------------------------------------------//
+    /**
+        * DESCRIPTION:
+        * Name - moveForward
+        * Input Argument Types - null
+        * Output Return Types - coordintates(x, y)
+        *
+        * PRE-CONDITION: The value of the y- axis must be less than or equal to 95
+        *
+        * POST-CONDITION: It Returns y and x axis coordinates that is (0, 0)
+        *
+        * TEST-CASES: 1-4
+        **/
+    int moveForward();
+	
+	
 }
 
 	

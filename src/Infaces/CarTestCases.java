@@ -22,28 +22,34 @@ public class CarTestCases {
     //TC 1
     @Test
     public void moveForwardTest() {
-        car.moveForward(0, 95);
-        Assert.assertEquals(100, car.moveForward(0, 95));
+        	car.yPos =95;
+        	car.xPos = 0;
+        car.moveForward();
+        Assert.assertEquals(1, car.moveForward());
     }
 
     //TC 2
     @Test
     public void moveForwardTest2() {
-        car.moveForward(95, 0);
-        Assert.assertEquals(5, car.moveForward(95, 0));
+       	car.xPos = 0;  	
+     	car.yPos = 0;
+        Assert.assertEquals(5, car.moveForward());
     }
 
     //    //TC 3
     @Test
     public void moveForwardTest3() {
-        car.moveForward(0, 100);
-        Assert.assertEquals(1, car.moveForward(0, 100));
+    	    car.xPos = 0;   
+     	car.yPos = 100;
+        Assert.assertEquals(1, car.moveForward());
     }
 
     //    //TC 4
     @Test
     public void moveForwardTest4() {
-        Assert.assertEquals(55, car.moveForward(5, 50));
+     	car.xPos = 0;    
+    	    car.yPos =55;
+        Assert.assertEquals(60, car.moveForward());
     }
 
     //TC 5
@@ -172,7 +178,7 @@ public class CarTestCases {
     public void carCannotChangeLaneTestLeftmostLaneBeginningOfStreet() {
         Car testCar = new Car(10, 10, 10, 10);
         testCar.setCarPosition(5, 0);
-        assertEquals("Lane could not be changed", testCar.changeLane());
+        assertEquals("Lane successfully changed", testCar.changeLane());
     }
 
     //TC 19

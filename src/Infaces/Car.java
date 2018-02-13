@@ -42,17 +42,17 @@ public class Car implements CarInterface {
     If not an error message is printed.
      */
     @Override
-    public int moveForward(int xPos, int yPos) {
-        if (yPos > 95) {
+    public int moveForward() {
+        if (this.yPos > 95) {
             return 1;
         } else {
-            yPos += move;
+            this.yPos += move;
         }
 
-        if (yPos <= 95) {
+        if (this.yPos <= 95) {
             isMovable = true;
         }
-        return yPos;
+        return this.yPos;
 
     }
 
@@ -75,11 +75,11 @@ public class Car implements CarInterface {
     public String changeLane() {
         if (leftLaneDetect(2).equals("No car detected on the left lane.") && this.xPos >= 10 && this.yPos <= 95) {
             queryCheck = false;
-            moveForward(xPos, yPos);
+            moveForward();
             setCarPosition(xPos - 5, this.yPos);
             return "Lane successfully changed";
         } else {
-            moveForward(xPos, yPos);
+            moveForward();
             return "Lane could not be changed";
         }
     }
