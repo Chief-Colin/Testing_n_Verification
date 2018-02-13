@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Assert;
+
 
 public class CarTestCases {
     private Car car;
@@ -15,38 +17,33 @@ public class CarTestCases {
     }
 
 
-//    //TC 1
-//    @Test
-//    public void moveForwardTest() {
-//        car.getSituation().stPosition = 0;
-//        car.moveForward();
-//        //Assert.assertEquals(0, car.getCarPosition());
-//
-//    }
-//
-//    //TC 2
-//    @Test
-//    public void moveForwardTest2() {
-//        car.getSituation().stPosition = 500;
-//        car.moveForward();
-//        Assert.assertEquals(499, car.getCarPosition());
-//    }
-//
+//TC 
+    @Test
+   public void moveForwardTest() {        
+           car.moveForward(0,95 );
+           Assert.assertEquals(100, car.moveForward(0, 95));
+ }
+
+   //TC 2
+ @Test
+ public void moveForwardTest2() {
+     car.moveForward(95,0 );
+     Assert.assertEquals(5, car.moveForward(95, 0));
+ }
+
 //    //TC 3
-//    @Test
-//    public void moveForwardTest3() {
-//        car.getSituation().stPosition = 400;
-//        car.moveForward();
-//        Assert.assertEquals(399, car.getCarPosition());
-//    }
-//
+    @Test
+    public void moveForwardTest3() {
+        car.moveForward(0,100 );
+        Assert.assertEquals("car cannot move", car.moveForward(0, 100));
+    }
+
 //    //TC 4
-//    @Test
-//    public void moveForwardTest4() {
-//        car.getSituation().stPosition = 400;
-//        car.moveForward();
-//        Assert.assertEquals(400, car.getCarPosition());
-//    }
+  @Test
+  public void moveForwardTest4() {
+      car.moveForward(5,50 );
+      Assert.assertEquals(55, car.moveForward(5, 55));
+   }
 
     //TC 5
     @Test
