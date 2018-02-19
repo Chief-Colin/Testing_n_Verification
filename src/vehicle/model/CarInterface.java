@@ -1,7 +1,7 @@
 /**
  *
  */
-package vehicle.controller;
+package vehicle.model;
 
 public interface CarInterface {
 

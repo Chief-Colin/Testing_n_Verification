@@ -3,6 +3,7 @@
  */
 package vehicle.controller;
 
+import vehicle.model.CarInterface;
 import vehicle.model.Lidar;
 import vehicle.model.Radar;
 
