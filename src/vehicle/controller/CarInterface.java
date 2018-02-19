@@ -1,7 +1,7 @@
 /**
  *
  */
-package Infaces;
+package vehicle.controller;
 
 public interface CarInterface {
 
@@ -60,13 +60,5 @@ public interface CarInterface {
         * TEST-CASES: 1-4
         **/
     int moveForward();
-	
-	
+
 }
-
-	
-
-
-
-
-

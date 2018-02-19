@@ -1,4 +1,4 @@
-package Infaces;
+package vehicle.model;
 
 public class Radar {
 	private int sensorValue;

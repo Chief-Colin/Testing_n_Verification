@@ -1,7 +1,10 @@
 /**
  *
  */
-package Infaces;
+package vehicle.controller;
+
+import vehicle.model.Lidar;
+import vehicle.model.Radar;
 
 import java.util.ArrayList;
 
@@ -11,13 +14,13 @@ import java.util.ArrayList;
  */
 
 public class Car implements CarInterface {
-    int xPos;
-    int yPos;
+    public int xPos;
+    public int yPos;
     private ArrayList<Radar> radars;
     private Lidar lidar;
     final int move = 5;
     private boolean isMovable = false;
-    boolean queryCheck = false;
+    public boolean queryCheck = false;
 
 
     public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal) {

@@ -1,8 +1,12 @@
-package Infaces;
+package tests;
+
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import vehicle.controller.Car;
+import vehicle.model.Lidar;
+import vehicle.model.Radar;
 
 import java.util.ArrayList;
 
@@ -10,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-public class CarTestCases {
+public class CarTests {
     private Car car;
 
     @Before
