@@ -1,17 +1,17 @@
 package vehicle.model;
 
 public class Radar {
-	private int sensorValue;
+    private int sensorValue;
 
-	public Radar(int sensorValue) {
-		this.sensorValue = sensorValue;
-	}
+    public Radar(int sensorValue) {
+        this.sensorValue = sensorValue;
+    }
 
-	public void setSensorValue(int sensorValue) {
-		this.sensorValue = sensorValue;
-	}
+    public void setSensorValue(int sensorValue) {
+        this.sensorValue = sensorValue;
+    }
 
-	public int getSensorValue() {
-		return sensorValue;
-	}
+    public int getSensorValue() {
+        return sensorValue;
+    }
 }

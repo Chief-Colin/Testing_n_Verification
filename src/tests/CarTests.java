@@ -4,9 +4,8 @@ package tests;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import vehicle.controller.Car;
-import vehicle.model.Lidar;
-import vehicle.model.Radar;
+import vehicle.model.*;
+import vehicle.controller.*;
 
 import java.util.ArrayList;
 
@@ -26,8 +25,8 @@ public class CarTests {
     //TC 1
     @Test
     public void moveForwardTest() {
-        	car.yPos =95;
-        	car.xPos = 0;
+        car.yPos = 95;
+        car.xPos = 0;
         car.moveForward();
         Assert.assertEquals(1, car.moveForward());
     }
@@ -35,24 +34,24 @@ public class CarTests {
     //TC 2
     @Test
     public void moveForwardTest2() {
-       	car.xPos = 0;  	
-     	car.yPos = 0;
+        car.xPos = 0;
+        car.yPos = 0;
         Assert.assertEquals(5, car.moveForward());
     }
 
     //    //TC 3
     @Test
     public void moveForwardTest3() {
-    	    car.xPos = 0;   
-     	car.yPos = 100;
+        car.xPos = 0;
+        car.yPos = 100;
         Assert.assertEquals(1, car.moveForward());
     }
 
     //    //TC 4
     @Test
     public void moveForwardTest4() {
-     	car.xPos = 0;    
-    	    car.yPos =55;
+        car.xPos = 0;
+        car.yPos = 55;
         Assert.assertEquals(60, car.moveForward());
     }
 
@@ -93,7 +92,6 @@ public class CarTests {
         car.setCarPosition(0, 100);
         car.setCarPosition(100, 0);
         int[] carPos = car.whereIs();
-
 
 
         assertEquals(carPos[0], 0);
@@ -171,7 +169,7 @@ public class CarTests {
 
     //TC 17
     @Test
-    public void carChangeLaneTestMiddleLaneMidWayOfStreet()  {
+    public void carChangeLaneTestMiddleLaneMidWayOfStreet() {
         Car testCar = new Car(10, 10, 10, 10);
         testCar.setCarPosition(10, 50);
         assertEquals("Lane successfully changed", testCar.changeLane());
@@ -196,15 +194,16 @@ public class CarTests {
     //TC 20 - Checks whether or not the sensor values inside leftLaneDetect() are queried twice to check for
     //        faulty sensor values.
     @Test
-        public void queryCheckedTwiceTest() {
+    public void queryCheckedTwiceTest() {
         Car carTest = new Car(-1, 10, 5, 50);
         carTest.leftLaneDetect(2);
         assertTrue(carTest.queryCheck);
     }
+
     //TC 21 - Checks if the queried sensor values are the twice in both queries
     @Test
     public void checkQueriedSensorValuesAreTheSameTest() {
-        Car carTest = new Car(10, 5, 5,10);
+        Car carTest = new Car(10, 5, 5, 10);
         carTest.leftLaneDetect(1);
 
         ArrayList<Radar> firstRadar = carTest.getRadars();

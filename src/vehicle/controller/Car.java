@@ -122,21 +122,21 @@ public class Car implements CarInterface {
         }
 
 
-            for (int i = 0; i < radars.size(); i++) {
-                if (radars.get(i).getSensorValue() > 0 && radars.get(i).getSensorValue() < 6) {
-                    return "Warning: Car detected.";
-                }
-            }
-
-            if (lidar.getSensorValue() > 0 && lidar.getSensorValue() < 6) {
+        for (int i = 0; i < radars.size(); i++) {
+            if (radars.get(i).getSensorValue() > 0 && radars.get(i).getSensorValue() < 6) {
                 return "Warning: Car detected.";
             }
+        }
+
+        if (lidar.getSensorValue() > 0 && lidar.getSensorValue() < 6) {
+            return "Warning: Car detected.";
+        }
 
         return "No car detected on the left lane.";
     }
 
     public void setCarPosition(int xPos, int yPos) {
-        if (((14<xPos) && (xPos<101)) && ((14<yPos)&&(yPos<101))) {
+        if (((14 < xPos) && (xPos < 101)) && ((14 < yPos) && (yPos < 101))) {
             this.xPos = xPos;
             this.yPos = yPos;
         } else {
