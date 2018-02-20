@@ -22,7 +22,7 @@ public class Car implements AutonomousVehicle {
     public boolean queryCheck = false;
 
 
-    public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal) {
+    public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal, MockActuator actuator) {
         this.xPos = 15;
         this.yPos = 0;
         carCoordinates = new int[] {xPos, yPos};
@@ -36,9 +36,14 @@ public class Car implements AutonomousVehicle {
         radars.add(radar3);
         lidar = new Lidar(lidarVal);
 
+        this.actuator = actuator;
+
     }
 
     public Car(MockActuator actuator){
+        this.xPos = 15;
+        this.xPos = 0;
+        carCoordinates = new int[] {xPos, yPos};
         this.actuator = actuator;
     }
 
