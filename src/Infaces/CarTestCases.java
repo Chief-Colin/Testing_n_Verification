@@ -77,7 +77,7 @@ public class CarTestCases {
 
     //    //TC 7
     @Test
-    public void whereIsBadXYValueTest() {
+    public void whereIsBadXYValuesTest() {
         //tries to set one bad x value, then one bad y value
         //-> test should not let set the bad values.
         car.setCarPosition(0, 100);
