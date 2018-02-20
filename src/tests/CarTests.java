@@ -48,7 +48,7 @@ public class CarTests {
     public void moveForwardTest3() {
         car.xPos = 0;
         car.yPos = 100;
-        Assert.assertEquals(1, car.moveForward());
+        Assert.assertEquals(100, car.moveForward());
     }
 
     //    //TC 4
