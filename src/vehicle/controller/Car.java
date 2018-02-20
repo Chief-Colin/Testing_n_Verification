@@ -27,10 +27,11 @@ public class Car implements AutonomousVehicle {
     public boolean queryCheck = false;
 
 
-    public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal) {
+    public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal, Actuator engine) {
         this.xPos = 15;
         this.yPos = 0;
         carCoordinates = new int[] {xPos, yPos};
+
         Radar radar1 = new Radar(frontRadarVal);
         Radar radar2 = new Radar(midRadarVal);
         Radar radar3 = new Radar(backRadarVal);
@@ -39,11 +40,15 @@ public class Car implements AutonomousVehicle {
         radars.add(radar2);
         radars.add(radar3);
         lidar = new Lidar(lidarVal);
+
+        this.actuator = engine;
     }
 
-    public Car() {
+    public Car(Actuator engine) {
+        this.actuator = engine;
     }
 
+    public Car(){}
 
     /*
     Checks that car position is currently within the range of the street and moves forward if it is.
