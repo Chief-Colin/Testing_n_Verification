@@ -62,13 +62,10 @@ public class CarTests {
     //TC 5
     @Test
     public void whereIsTest() {
-        int xPos = 15;
-        int yPos = 100;
-        car.setCarCoordinates(xPos, yPos);
-        int[] whereIsCar = car.whereIs();
+       car.setCarCoordinates(15, 100);
 
-        assertEquals(whereIsCar[0], 15);
-        assertEquals(whereIsCar[1], 100);
+        assertEquals(car.whereIs()[0], 15);
+        assertEquals(car.whereIs()[1], 100);
     }
 
 
@@ -125,7 +122,7 @@ public class CarTests {
     //TC 11 - Car  detection with one faulty sensor
     @Test
     public void oneFaultySensorValueCarDetectedTest() {
-        Car testCar = new Car(-1, 5, 5, 10);
+        Car testCar = new Car(-1, 5, 5, 10, actuator);
 
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
     }
@@ -133,7 +130,7 @@ public class CarTests {
     //TC 12 - Car detection with two faulty sensors
     @Test
     public void twoFaultySensorValuesCarDetectedTest() {
-        Car testCar = new Car(-1, -1, 5, 10);
+        Car testCar = new Car(-1, -1, 5, 10, actuator);
 
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
     }
@@ -141,7 +138,7 @@ public class CarTests {
     //TC 13 - Car detection with three faulty sensors, should return error message indicating unreliable sensor values
     @Test
     public void threeFaultySensorValuesCarDetectedTest() {
-        Car testCar = new Car(-1, -1, 5, -1);
+        Car testCar = new Car(-1, -1, 5, -1, actuator);
 
         assertEquals("Error: Values not reliable.", testCar.leftLaneDetect(2));
     }
@@ -149,7 +146,7 @@ public class CarTests {
     //TC 14 - Car detection with no faulty sensor values
     @Test
     public void carDetectedInLeftLaneTest() {
-        Car testCar = new Car(10, 10, 5, 2);
+        Car testCar = new Car(10, 10, 5, 2, actuator);
 
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
     }
@@ -157,7 +154,7 @@ public class CarTests {
     //TC 15 - Empty lane detection with no faulty sensor values
     @Test
     public void emptyLeftLaneDetectTest() {
-        Car testCar = new Car(10, 10, 50, 50);
+        Car testCar = new Car(10, 10, 50, 50, actuator);
 
         assertEquals("No car detected on the left lane.", testCar.leftLaneDetect(2));
     }
@@ -165,7 +162,7 @@ public class CarTests {
     //TC 16
     @Test
     public void carChangeLaneTestRightmostLaneBeginningOfStreet() {
-        Car testCar = new Car(10, 10, 10, 10);
+        Car testCar = new Car(10, 10, 10, 10, actuator);
         testCar.setCarCoordinates(15, 0);
 
         assertEquals("Lane successfully changed", testCar.changeLane());
@@ -174,7 +171,7 @@ public class CarTests {
     //TC 17
     @Test
     public void carChangeLaneTestMiddleLaneMidWayOfStreet() {
-        Car testCar = new Car(10, 10, 10, 10);
+        Car testCar = new Car(10, 10, 10, 10, actuator );
         testCar.setCarCoordinates(10, 50);
         assertEquals("Lane successfully changed", testCar.changeLane());
     }
@@ -182,7 +179,7 @@ public class CarTests {
     //TC 18
     @Test
     public void carCannotChangeLaneTestLeftmostLaneBeginningOfStreet() {
-        Car testCar = new Car(10, 10, 10, 10);
+        Car testCar = new Car(10, 10, 10, 10, actuator);
         testCar.setCarCoordinates(5, 0);
         assertEquals("Lane successfully changed", testCar.changeLane());
     }
@@ -190,7 +187,7 @@ public class CarTests {
     //TC 19
     @Test
     public void carCannotChangeLaneTestRightmostLaneEndOfStreet() {
-        Car testCar = new Car(10, 10, 10, 10);
+        Car testCar = new Car(10, 10, 10, 10, actuator);
         testCar.setCarCoordinates(15, 96);
         assertEquals("Lane could not be changed", testCar.changeLane());
     }
@@ -199,7 +196,7 @@ public class CarTests {
     //        faulty sensor values.
     @Test
     public void queryCheckedTwiceTest() {
-        Car carTest = new Car(-1, 10, 5, 50);
+        Car carTest = new Car(-1, 10, 5, 50, actuator);
         carTest.leftLaneDetect(2);
         assertTrue(carTest.queryCheck);
     }
@@ -207,7 +204,7 @@ public class CarTests {
     //TC 21 - Checks if the queried sensor values are the twice in both queries
     @Test
     public void checkQueriedSensorValuesAreTheSameTest() {
-        Car carTest = new Car(10, 5, 5, 10);
+        Car carTest = new Car(10, 5, 5, 10, actuator);
         carTest.leftLaneDetect(1);
 
         ArrayList<Radar> firstRadar = carTest.getRadars();
