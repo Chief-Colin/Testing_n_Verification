@@ -9,7 +9,7 @@ public class MockActuator implements Actuator {
         if (car.yPos > 95) {
             return 1;
         } else {
-            car.yPos += 5;
+            car.yPos += distance;
         }
         return car.yPos;
     }
