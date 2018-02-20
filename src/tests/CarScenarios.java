@@ -26,7 +26,7 @@ public class CarScenarios {
         assertEquals(10, testCar.moveForward());
         assertEquals(15, testCar.moveForward());
 
-        testCar.changeLane();
+        assertEquals("Lane successfully changed", testCar.changeLane());
         assertEquals(10, testCar.xPos);
 
         while (testCar.yPos < 100) {
@@ -35,5 +35,23 @@ public class CarScenarios {
 
         assertEquals(100, testCar.yPos);
 
+    }
+
+    @Test
+    public void startAtBeginningOfStreetCarDetectThenContinueTest() {
+        Car testCar = new Car(5, 5, 10, 10, actuator);
+        testCar.setCarCoordinates(15, 0);
+        assertEquals(5, testCar.moveForward());
+        assertEquals(10, testCar.moveForward());
+        assertEquals(15, testCar.moveForward());
+
+        assertEquals("Lane could not be changed", testCar.changeLane());
+        assertEquals(15, testCar.xPos);
+
+        while (testCar.yPos < 100) {
+            testCar.moveForward();
+        }
+
+        assertEquals(100, testCar.yPos);
     }
 }
