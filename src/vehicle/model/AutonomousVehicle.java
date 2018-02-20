@@ -35,7 +35,7 @@ public interface AutonomousVehicle {
      * <p>
      * POST-CONDITION: Returns the appropriate String message based on lane detection.
      * <p>
-     * TEST-CASES: 7-12
+     * TEST-CASES: 11-15, 20, 21.
      **/
 
     String leftLaneDetect(int queryCount);
