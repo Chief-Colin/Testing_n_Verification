@@ -63,7 +63,7 @@ public class CarScenarios {
         }
 
         assertEquals(100, testCar.yPos);
-        assertEquals(1, testCar.moveForward());
+        assertEquals(100, testCar.moveForward());
 
     }
 
@@ -83,7 +83,7 @@ public class CarScenarios {
         }
 
         assertEquals(100, testCar.yPos);
-        assertEquals(1, testCar.moveForward());
+        assertEquals(100, testCar.moveForward());
 
     }
 
