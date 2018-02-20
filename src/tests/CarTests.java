@@ -93,12 +93,11 @@ public class CarTests {
         //tries to set one bad x value, then one bad y value
         //-> test should not let set the bad values.
         car.setCarCoordinates(0, 100);
-        car.setCarCoordinates(100, 0);
-        int[] carPos = car.whereIs();
+        car.setCarCoordinates(100, 200);
 
 
-        assertEquals(carPos[0], 0);
-        assertEquals(carPos[1], 0);
+        assertEquals(car.whereIs()[0], 0);
+        assertEquals(car.whereIs()[1], 100);
     }
 //    //TC 8
 //    @Test
