@@ -1,6 +1,6 @@
 package vehicle.model;
 
-public class Lidar implements SensorInterface {
+public class Lidar implements Sensor {
     private int sensorValue;
 
     public Lidar(int sensorValue) {

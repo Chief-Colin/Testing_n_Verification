@@ -1,6 +1,6 @@
 package vehicle.model;
 
-public interface SensorInterface {
+public interface Sensor {
 
     int getSensorValue();
 

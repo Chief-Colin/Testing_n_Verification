@@ -3,7 +3,7 @@
  */
 package vehicle.model;
 
-public interface CarInterface {
+public interface AutonomousVehicle {
 
 
     /**

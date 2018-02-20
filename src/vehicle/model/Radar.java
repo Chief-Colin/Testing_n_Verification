@@ -1,6 +1,6 @@
 package vehicle.model;
 
-public class Radar implements SensorInterface{
+public class Radar implements Sensor {
     private int sensorValue;
 
     public Radar(int sensorValue) {

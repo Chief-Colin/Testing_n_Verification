@@ -60,7 +60,7 @@ public class CarTests {
     public void whereIsTest() {
         int xPos = 15;
         int yPos = 100;
-        car.setCarPosition(xPos, yPos);
+        car.setCarCoordinates(xPos, yPos);
         int[] whereIsCar = car.whereIs();
 
         assertEquals(whereIsCar[0], 15);
@@ -74,9 +74,9 @@ public class CarTests {
 
         //first set correct values, then bad ones
         //->test that good values stay x and y.
-        car.setCarPosition(20, 30);
+        car.setCarCoordinates(20, 30);
 
-        car.setCarPosition(6, 5);
+        car.setCarCoordinates(6, 5);
         int[] carPos = car.whereIs();
 
         assertEquals(carPos[0], 20);
@@ -89,8 +89,8 @@ public class CarTests {
     public void whereIsBadXYValueTest() {
         //tries to set one bad x value, then one bad y value
         //-> test should not let set the bad values.
-        car.setCarPosition(0, 100);
-        car.setCarPosition(100, 0);
+        car.setCarCoordinates(0, 100);
+        car.setCarCoordinates(100, 0);
         int[] carPos = car.whereIs();
 
 
@@ -162,7 +162,7 @@ public class CarTests {
     @Test
     public void carChangeLaneTestRightmostLaneBeginningOfStreet() {
         Car testCar = new Car(10, 10, 10, 10);
-        testCar.setCarPosition(15, 0);
+        testCar.setCarCoordinates(15, 0);
 
         assertEquals("Lane successfully changed", testCar.changeLane());
     }
@@ -171,7 +171,7 @@ public class CarTests {
     @Test
     public void carChangeLaneTestMiddleLaneMidWayOfStreet() {
         Car testCar = new Car(10, 10, 10, 10);
-        testCar.setCarPosition(10, 50);
+        testCar.setCarCoordinates(10, 50);
         assertEquals("Lane successfully changed", testCar.changeLane());
     }
 
@@ -179,7 +179,7 @@ public class CarTests {
     @Test
     public void carCannotChangeLaneTestLeftmostLaneBeginningOfStreet() {
         Car testCar = new Car(10, 10, 10, 10);
-        testCar.setCarPosition(5, 0);
+        testCar.setCarCoordinates(5, 0);
         assertEquals("Lane successfully changed", testCar.changeLane());
     }
 
@@ -187,7 +187,7 @@ public class CarTests {
     @Test
     public void carCannotChangeLaneTestRightmostLaneEndOfStreet() {
         Car testCar = new Car(10, 10, 10, 10);
-        testCar.setCarPosition(15, 96);
+        testCar.setCarCoordinates(15, 96);
         assertEquals("Lane could not be changed", testCar.changeLane());
     }
 

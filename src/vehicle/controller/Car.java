@@ -3,7 +3,8 @@
  */
 package vehicle.controller;
 
-import vehicle.model.CarInterface;
+import vehicle.model.Actuator;
+import vehicle.model.AutonomousVehicle;
 import vehicle.model.Lidar;
 import vehicle.model.Radar;
 
@@ -14,9 +15,11 @@ import java.util.ArrayList;
  * @author chiefcorlyns
  */
 
-public class Car implements CarInterface {
+public class Car implements AutonomousVehicle {
+    public Actuator actuator;
     public int xPos;
     public int yPos;
+    private int[] carCoordinates;
     private ArrayList<Radar> radars;
     private Lidar lidar;
     final int move = 5;
@@ -27,6 +30,7 @@ public class Car implements CarInterface {
     public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal) {
         this.xPos = 15;
         this.yPos = 0;
+        carCoordinates = new int[] {xPos, yPos};
         Radar radar1 = new Radar(frontRadarVal);
         Radar radar2 = new Radar(midRadarVal);
         Radar radar3 = new Radar(backRadarVal);
@@ -50,14 +54,14 @@ public class Car implements CarInterface {
         if (this.yPos > 95) {
             return 1;
         } else {
-            this.yPos += move;
+            actuator.moveVehicle(carCoordinates, move);
+            this.xPos += 5;
         }
 
         if (this.yPos <= 95) {
             isMovable = true;
         }
         return this.yPos;
-
     }
 
     /*
@@ -65,10 +69,6 @@ public class Car implements CarInterface {
      */
     @Override
     public int[] whereIs() {
-        int[] carCoordinates = new int[2];
-        carCoordinates[0] = xPos;
-        carCoordinates[1] = yPos;
-
         return carCoordinates;
     }
 
@@ -80,7 +80,7 @@ public class Car implements CarInterface {
         if (leftLaneDetect(2).equals("No car detected on the left lane.") && this.xPos >= 10 && this.yPos <= 95) {
             queryCheck = false;
             moveForward();
-            setCarPosition(xPos - 5, this.yPos);
+            setCarCoordinates(xPos - 5, this.yPos);
             return "Lane successfully changed";
         } else {
             moveForward();
@@ -136,10 +136,12 @@ public class Car implements CarInterface {
         return "No car detected on the left lane.";
     }
 
-    public void setCarPosition(int xPos, int yPos) {
+    public void setCarCoordinates(int xPos, int yPos) {
         if (((14 < xPos) && (xPos < 101)) && ((14 < yPos) && (yPos < 101))) {
             this.xPos = xPos;
             this.yPos = yPos;
+            carCoordinates[0] = xPos;
+            carCoordinates[1] = yPos;
         } else {
             System.out.println("Out of bounds.");
         }
