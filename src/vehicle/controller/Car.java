@@ -130,7 +130,7 @@ public class Car implements AutonomousVehicle {
     }
 
     public void setCarCoordinates(int xPos, int yPos) {
-        if (xPos < 14 && yPos < 101) {
+        if (xPos < 16 && yPos < 101) {
             this.xPos = xPos;
             this.yPos = yPos;
             carCoordinates[0] = xPos;
