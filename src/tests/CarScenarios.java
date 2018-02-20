@@ -97,12 +97,12 @@ public class CarScenarios {
 
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
 
+        testCar.moveForward();
+        testCar.moveForward();
+        testCar.moveForward();
 
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(1));
 
-        testCar.moveForward();
-        testCar.moveForward();
-        testCar.moveForward();
 
         testCar.setRadars(10, 10, 10);
         testCar.setLidar(10);
