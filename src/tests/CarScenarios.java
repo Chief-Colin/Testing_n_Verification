@@ -95,19 +95,18 @@ public class CarScenarios {
         assertEquals(10, testCar.moveForward());
         assertEquals(15, testCar.moveForward());
 
+        assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
+
         int frontRadar = testCar.getRadars().get(0).getSensorValue();
         int midRadar = testCar.getRadars().get(1).getSensorValue();
         int backRadar = testCar.getRadars().get(2).getSensorValue();
         int lidar = testCar.getLidar().getSensorValue();
-
-        assertEquals("Warning: Car detected.", testCar.leftLaneDetect(2));
 
         testCar.moveForward();
         testCar.moveForward();
         testCar.moveForward();
 
         assertEquals("Warning: Car detected.", testCar.leftLaneDetect(1));
-
 
         testCar.setRadars(10, 10, 10);
         testCar.setLidar(10);
