@@ -54,4 +54,22 @@ public class CarScenarios {
 
         assertEquals(100, testCar.yPos);
     }
+
+    @Test
+    public void startAtBeginningOfStreetThreeBadValuesThenContinueTest() {
+        Car testCar = new Car(64, 5, -3, 53, actuator);
+        testCar.setCarCoordinates(15, 0);
+        assertEquals(5, testCar.moveForward());
+        assertEquals(10, testCar.moveForward());
+        assertEquals(15, testCar.moveForward());
+
+        assertEquals("Error: Values not reliable.", testCar.leftLaneDetect(2));
+        assertEquals(15, testCar.xPos);
+
+        while (testCar.yPos < 100) {
+            testCar.moveForward();
+        }
+
+        assertEquals(100, testCar.yPos);
+    }
 }
