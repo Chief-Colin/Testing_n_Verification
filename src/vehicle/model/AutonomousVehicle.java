@@ -42,7 +42,19 @@ public interface AutonomousVehicle {
 
     //--------------------------------------------------------------------------------------------------//
 
-
+    /**
+     * DESCRIPTION:
+     * Name - changeLane
+     * Input Argument Types - None
+     * Output Return Types - String
+     * <p>
+     * PRE-CONDITION: The value of the y- axis must be less than or equal to 95,
+     * The Radar and Lidar instance variables of the Car are initialized
+     * <p>
+     * POST-CONDITION: Returns the appropriate String message based on outcome
+     * <p>
+     * TEST-CASES: 16-19
+     **/
     String changeLane();
 
     //---------------------------------------------------------------------------------------------------//

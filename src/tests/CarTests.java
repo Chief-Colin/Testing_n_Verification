@@ -183,7 +183,7 @@ public class CarTests {
     public void carCannotChangeLaneTestLeftmostLaneBeginningOfStreet() {
         Car testCar = new Car(10, 10, 10, 10, actuator);
         testCar.setCarCoordinates(5, 0);
-        assertEquals("Lane successfully changed", testCar.changeLane());
+        assertEquals("Lane could not be changed", testCar.changeLane());
     }
 
     //TC 19
