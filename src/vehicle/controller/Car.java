@@ -10,7 +10,6 @@ import vehicle.model.Radar;
 import java.util.ArrayList;
 
 
-
 public class Car implements AutonomousVehicle {
     public MockActuator actuator;
     public int xPos;
@@ -25,7 +24,7 @@ public class Car implements AutonomousVehicle {
     public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal, MockActuator actuator) {
         this.xPos = 15;
         this.yPos = 0;
-        carCoordinates = new int[] {xPos, yPos};
+        carCoordinates = new int[]{xPos, yPos};
 
         Radar radar1 = new Radar(frontRadarVal);
         Radar radar2 = new Radar(midRadarVal);
@@ -40,10 +39,10 @@ public class Car implements AutonomousVehicle {
 
     }
 
-    public Car(MockActuator actuator){
+    public Car(MockActuator actuator) {
         this.xPos = 15;
         this.xPos = 0;
-        carCoordinates = new int[] {xPos, yPos};
+        carCoordinates = new int[]{xPos, yPos};
         this.actuator = actuator;
     }
 
@@ -131,7 +130,7 @@ public class Car implements AutonomousVehicle {
     }
 
     public void setCarCoordinates(int xPos, int yPos) {
-        if (xPos < 14  && yPos < 101) {
+        if (xPos < 14 && yPos < 101) {
             this.xPos = xPos;
             this.yPos = yPos;
             carCoordinates[0] = xPos;
@@ -139,6 +138,16 @@ public class Car implements AutonomousVehicle {
         } else {
             return;
         }
+    }
+
+    public void setRadars(int front, int mid, int back) {
+        radars.get(0).setSensorValue(front);
+        radars.get(1).setSensorValue(mid);
+        radars.get(2).setSensorValue(back);
+    }
+
+    public void setLidar(int value) {
+        lidar.setSensorValue(value);
     }
 
     public Lidar getLidar() {

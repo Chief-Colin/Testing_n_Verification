@@ -6,6 +6,7 @@ import vehicle.controller.Car;
 import vehicle.controller.MockActuator;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CarScenarios {
     private Car car;
@@ -26,20 +27,24 @@ public class CarScenarios {
         assertEquals(10, testCar.moveForward());
         assertEquals(15, testCar.moveForward());
 
+        testCar.setRadars(100, 100, 10);
         assertEquals("Lane successfully changed", testCar.changeLane());
         assertEquals(10, testCar.xPos);
+
+        assertEquals(10, testCar.whereIs()[0]);
+        assertEquals(20, testCar.whereIs()[1]);
+
 
         while (testCar.yPos < 100) {
             testCar.moveForward();
         }
-
         assertEquals(100, testCar.yPos);
-
+        assertEquals(1, testCar.moveForward());
     }
 
     @Test
     public void startAtBeginningOfStreetCarDetectThenContinueTest() {
-        Car testCar = new Car(5, 5, 10, 10, actuator);
+        Car testCar = new Car(10, 10, 10, 5, actuator);
         testCar.setCarCoordinates(15, 0);
         assertEquals(5, testCar.moveForward());
         assertEquals(10, testCar.moveForward());
@@ -53,6 +58,8 @@ public class CarScenarios {
         }
 
         assertEquals(100, testCar.yPos);
+        assertEquals(1, testCar.moveForward());
+
     }
 
     @Test
@@ -71,5 +78,40 @@ public class CarScenarios {
         }
 
         assertEquals(100, testCar.yPos);
+        assertEquals(1, testCar.moveForward());
+
+    }
+
+    @Test
+    public void faultySensorsScenarioTest() {
+        Car testCar = new Car(5, 10, 10, 5, actuator);
+        testCar.setCarCoordinates(15, 0);
+        assertEquals(5, testCar.moveForward());
+        assertEquals(10, testCar.moveForward());
+        assertEquals(15, testCar.moveForward());
+
+        int frontRadar = testCar.getRadars().get(0).getSensorValue();
+        int midRadar = testCar.getRadars().get(1).getSensorValue();
+        int backRadar = testCar.getRadars().get(2).getSensorValue();
+        int lidar = testCar.getLidar().getSensorValue();
+
+        assertEquals("Warning: Car detected.", testCar.leftLaneDetect(1));
+
+        testCar.setRadars(10, 10, 10);
+        testCar.setLidar(10);
+
+        int secondFrontRadar = testCar.getRadars().get(0).getSensorValue();
+        int secondMidRadar = testCar.getRadars().get(1).getSensorValue();
+        int secondBackRadar = testCar.getRadars().get(2).getSensorValue();
+        int secondLidar = testCar.getLidar().getSensorValue();
+
+
+        assertTrue(lidar != secondLidar);
+        assertTrue(frontRadar != secondFrontRadar);
+        assertTrue(midRadar == secondMidRadar);
+        assertTrue(backRadar == secondBackRadar);
+
+
+        assertEquals("No car detected on the left lane.", testCar.leftLaneDetect(1));
     }
 }
