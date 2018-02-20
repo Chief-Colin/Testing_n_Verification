@@ -3,7 +3,6 @@
  */
 package vehicle.controller;
 
-import vehicle.model.Actuator;
 import vehicle.model.AutonomousVehicle;
 import vehicle.model.Lidar;
 import vehicle.model.Radar;
@@ -11,23 +10,19 @@ import vehicle.model.Radar;
 import java.util.ArrayList;
 
 
-/**
- * @author chiefcorlyns
- */
 
 public class Car implements AutonomousVehicle {
-    public Actuator actuator;
+    public MockActuator actuator;
     public int xPos;
     public int yPos;
     private int[] carCoordinates;
     private ArrayList<Radar> radars;
     private Lidar lidar;
     final int move = 5;
-    private boolean isMovable = false;
     public boolean queryCheck = false;
 
 
-    public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal, Actuator engine) {
+    public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal) {
         this.xPos = 15;
         this.yPos = 0;
         carCoordinates = new int[] {xPos, yPos};
@@ -41,14 +36,11 @@ public class Car implements AutonomousVehicle {
         radars.add(radar3);
         lidar = new Lidar(lidarVal);
 
-        this.actuator = engine;
     }
 
-    public Car(Actuator engine) {
-        this.actuator = engine;
+    public Car(MockActuator actuator){
+        this.actuator = actuator;
     }
-
-    public Car(){}
 
     /*
     Checks that car position is currently within the range of the street and moves forward if it is.
@@ -56,17 +48,9 @@ public class Car implements AutonomousVehicle {
      */
     @Override
     public int moveForward() {
-        if (this.yPos > 95) {
-            return 1;
-        } else {
-            actuator.moveVehicle(carCoordinates, move);
-            this.xPos += 5;
-        }
-
-        if (this.yPos <= 95) {
-            isMovable = true;
-        }
-        return this.yPos;
+        int currentPosition = actuator.moveVehicle(this, move);
+        this.yPos = currentPosition;
+        return currentPosition;
     }
 
     /*

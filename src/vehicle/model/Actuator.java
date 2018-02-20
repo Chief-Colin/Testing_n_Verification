@@ -1,6 +1,8 @@
 package vehicle.model;
 
+import vehicle.controller.Car;
+
 public interface Actuator {
 
-     int moveVehicle(int[] vehicleCoordinates, int distance);
+     int moveVehicle(Car car, int distance);
 }

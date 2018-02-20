@@ -4,8 +4,10 @@ package tests;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import vehicle.model.*;
-import vehicle.controller.*;
+import vehicle.controller.Car;
+import vehicle.controller.MockActuator;
+import vehicle.model.Lidar;
+import vehicle.model.Radar;
 
 import java.util.ArrayList;
 
@@ -15,10 +17,13 @@ import static org.junit.Assert.assertTrue;
 
 public class CarTests {
     private Car car;
+    private MockActuator actuator;
+
 
     @Before
     public void setUp() {
-        car = new Car();
+        actuator = new MockActuator();
+        car = new Car(actuator);
     }
 
 
@@ -27,8 +32,7 @@ public class CarTests {
     public void moveForwardTest() {
         car.yPos = 95;
         car.xPos = 0;
-        car.moveForward();
-        Assert.assertEquals(1, car.moveForward());
+        assertEquals(100, car.moveForward());
     }
 
     //TC 2
