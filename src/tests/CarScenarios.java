@@ -1,23 +1,39 @@
 package tests;
 
 import org.junit.Before;
-import org.mockito.Mock;
+import org.junit.Test;
 import vehicle.controller.Car;
 import vehicle.controller.MockActuator;
-import vehicle.model.Actuator;
 
-import static org.mockito.Mockito.mock;
+import static org.junit.Assert.assertEquals;
 
 public class CarScenarios {
     private Car car;
-    private MockActuator engine;
+    private MockActuator actuator;
 
-    @Mock
-    Actuator actuator =  mock(Actuator.class);
 
     @Before
     public void setUp() {
-        car = new Car(engine);
+        actuator = new MockActuator();
+        car = new Car(actuator);
     }
-    
+
+    @Test
+    public void startAtBeginningOfStreetChangeLaneThenContinueTest() {
+        Car testCar = new Car(10, 10, 10, 10, actuator);
+        testCar.setCarCoordinates(15, 0);
+        assertEquals(5, testCar.moveForward());
+        assertEquals(10, testCar.moveForward());
+        assertEquals(15, testCar.moveForward());
+
+        testCar.changeLane();
+        assertEquals(10, testCar.xPos);
+
+        while (testCar.yPos < 100) {
+            testCar.moveForward();
+        }
+
+        assertEquals(100, testCar.yPos);
+
+    }
 }
