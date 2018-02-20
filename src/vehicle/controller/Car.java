@@ -1,28 +1,32 @@
 /**
  *
  */
-package Infaces;
+package vehicle.controller;
+
+import vehicle.model.AutonomousVehicle;
+import vehicle.model.Lidar;
+import vehicle.model.Radar;
 
 import java.util.ArrayList;
 
 
-/**
- * @author chiefcorlyns
- */
 
-public class Car implements CarInterface {
-    int xPos;
-    int yPos;
+public class Car implements AutonomousVehicle {
+    public MockActuator actuator;
+    public int xPos;
+    public int yPos;
+    private int[] carCoordinates;
     private ArrayList<Radar> radars;
     private Lidar lidar;
     final int move = 5;
-    private boolean isMovable = false;
-    boolean queryCheck = false;
+    public boolean queryCheck = false;
 
 
     public Car(int frontRadarVal, int midRadarVal, int backRadarVal, int lidarVal) {
         this.xPos = 15;
         this.yPos = 0;
+        carCoordinates = new int[] {xPos, yPos};
+
         Radar radar1 = new Radar(frontRadarVal);
         Radar radar2 = new Radar(midRadarVal);
         Radar radar3 = new Radar(backRadarVal);
@@ -31,29 +35,22 @@ public class Car implements CarInterface {
         radars.add(radar2);
         radars.add(radar3);
         lidar = new Lidar(lidarVal);
+
     }
 
-    public Car() {
+    public Car(MockActuator actuator){
+        this.actuator = actuator;
     }
-
 
     /*
     Checks that car position is currently within the range of the street and moves forward if it is.
     If not an error message is printed.
      */
     @Override
-    public int moveForward(int xPos, int yPos) {
-        if (yPos > 95) {
-            return 1;
-        } else {
-            yPos += move;
-        }
-
-        if (yPos <= 95) {
-            isMovable = true;
-        }
-        return yPos;
-
+    public int moveForward() {
+        int currentPosition = actuator.moveVehicle(this, move);
+        this.yPos = currentPosition;
+        return currentPosition;
     }
 
     /*
@@ -61,10 +58,6 @@ public class Car implements CarInterface {
      */
     @Override
     public int[] whereIs() {
-        int[] carCoordinates = new int[2];
-        carCoordinates[0] = xPos;
-        carCoordinates[1] = yPos;
-
         return carCoordinates;
     }
 
@@ -75,11 +68,11 @@ public class Car implements CarInterface {
     public String changeLane() {
         if (leftLaneDetect(2).equals("No car detected on the left lane.") && this.xPos >= 10 && this.yPos <= 95) {
             queryCheck = false;
-            moveForward(xPos, yPos);
-            setCarPosition(xPos - 5, this.yPos);
+            moveForward();
+            setCarCoordinates(xPos - 5, this.yPos);
             return "Lane successfully changed";
         } else {
-            moveForward(xPos, yPos);
+            moveForward();
             return "Lane could not be changed";
         }
     }
@@ -119,23 +112,25 @@ public class Car implements CarInterface {
         }
 
 
-            for (int i = 0; i < radars.size(); i++) {
-                if (radars.get(i).getSensorValue() > 0 && radars.get(i).getSensorValue() < 6) {
-                    return "Warning: Car detected.";
-                }
-            }
-
-            if (lidar.getSensorValue() > 0 && lidar.getSensorValue() < 6) {
+        for (int i = 0; i < radars.size(); i++) {
+            if (radars.get(i).getSensorValue() > 0 && radars.get(i).getSensorValue() < 6) {
                 return "Warning: Car detected.";
             }
+        }
+
+        if (lidar.getSensorValue() > 0 && lidar.getSensorValue() < 6) {
+            return "Warning: Car detected.";
+        }
 
         return "No car detected on the left lane.";
     }
 
-    public void setCarPosition(int xPos, int yPos) {
-        if (((14<xPos) && (xPos<101)) && ((14<yPos)&&(yPos<101))) {
+    public void setCarCoordinates(int xPos, int yPos) {
+        if (((14 < xPos) && (xPos < 101)) && ((14 < yPos) && (yPos < 101))) {
             this.xPos = xPos;
             this.yPos = yPos;
+            carCoordinates[0] = xPos;
+            carCoordinates[1] = yPos;
         } else {
             System.out.println("Out of bounds.");
         }
