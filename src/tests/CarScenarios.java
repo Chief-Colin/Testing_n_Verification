@@ -76,14 +76,12 @@ public class CarScenarios {
         assertEquals(15, testCar.moveForward());
 
         assertEquals("Error: Values not reliable.", testCar.leftLaneDetect(2));
-        assertEquals(15, testCar.xPos);
 
         while (testCar.yPos < 100) {
             testCar.moveForward();
         }
 
         assertEquals(100, testCar.yPos);
-        assertEquals(100, testCar.moveForward());
 
     }
 
